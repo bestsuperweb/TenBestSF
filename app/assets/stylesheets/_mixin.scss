@@ -1,0 +1,15 @@
+//Usage: @include font-face('Kent Medium','KentMed', normal (optional), bold (optional));
+@mixin font-face($foldername,$fontname,$filename,$fontstyle: normal,$fontweight: normal) {
+  @font-face {
+    font-family: '#{$fontname}';
+    src: url(asset_path('assets/#{$foldername}/#{$filename}.eot'));
+    src: url(asset_path('assets/#{$foldername}/#{$filename}.eot?#iefix')) format('embedded-opentype'),
+    url(asset_path('assets/#{$foldername}/#{$filename}.woff')) format('woff'),
+    url(asset_path('assets/#{$foldername}/#{$filename}.ttf')) format('truetype'),
+    url(asset_path('assets/#{$foldername}/#{$filename}.svg##{$filename}')) format('svg');
+    //svg id supports mixed case and hyphens inside, see http://j.mp/U7A83a
+
+    font-style: $fontstyle;
+    font-weight: $fontweight;
+  }
+}

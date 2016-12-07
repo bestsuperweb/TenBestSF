@@ -1,0 +1,1135 @@
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .navbar {
+    .menu-container {
+      .menu-header {
+        position: relative;
+
+      }
+      .menu-tabs-section {
+        .menu-tab {
+          .menu-listings-section  {
+            display: none;
+          }
+          &.active {
+            .menu-listings-section  {
+              position: absolute;
+              height: 322px;
+              z-index: 99999;
+              box-sizing: content-box;
+              left: 0px;
+              margin: 0 auto;
+              top: 72px;
+              display: block;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+  .background-image {
+    min-height: 440px;
+  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+ .header{
+   .navbar {
+     .menu-container {
+       .menu-header {
+         position: relative;
+
+       }
+       .menu-tabs-section {
+         .menu-listings-section  {
+           position: absolute;
+           height: 322px;
+           z-index: 99999;
+           box-sizing: content-box;
+           left: 0px;
+           margin: 0 auto;
+           top: 72px;
+         }
+       }
+     }
+
+     .pages-section {
+       padding-left: 0px;
+     }
+     .menu-list-wrapper {
+       .menu-header {
+         .menu-tabs-section{
+           .menu-tab {
+             max-width: 180px;
+           }
+         }
+       }
+     }
+     .menu-list-wrapper {
+       .menu-listings-section {
+         .list-wrapper {
+           max-width: 180px;
+         }
+       }
+     }
+
+
+   }
+ }
+  .media-section {
+    a {
+      margin-right: 25px;
+    }
+  }
+
+  .learn-more-section .progress-container .progress-list .progress-item .progress-bar-wrapper {
+    margin-left: 55px;
+  }
+
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container {
+    width: 30%
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container {
+    width: 55%;
+  }
+
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container .title-container {
+    font-size: 24px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container .city-container {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header{
+    .navbar {
+      .menu-container {
+        .menu-header {
+          position: relative;
+
+        }
+        .menu-tabs-section {
+          .menu-listings-section  {
+            position: absolute;
+            height: 322px;
+            z-index: 99999;
+            box-sizing: content-box;
+            left: 0px;
+            margin: 0 auto;
+            top: 72px;
+          }
+        }
+      }
+      .pages-section {
+        padding-left: 0px;
+      }
+
+      .menu-list-wrapper {
+        .container {
+          width: 740px;
+        }
+        .menu-header {
+          .menu-tabs-section{
+            .menu-tab {
+              max-width: 145px;
+            }
+          }
+        }
+      }
+      .menu-list-wrapper {
+        .menu-listings-section {
+
+          .list-wrapper {
+            max-width: 145px;
+            .list-heading {
+              font-size: 11px;
+            }
+            .list {
+              li {
+                a {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+  .search-section {
+    .ready-to-explore-container {
+      padding-left: 6%;
+    }
+
+  }
+
+  .places-section {
+    .main-place-container {
+      img {
+        width: 100%;
+        max-height: 300px;
+      }
+    }
+    .small-places-container {
+      margin-top: 10px;
+      .place-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+
+        img {
+          width: 100%;
+          max-height: 220px;
+        }
+      }
+    }
+  }
+
+  .we-make-easy-section {
+    .text-info-container {
+      font-size: 18px;
+      border-right: 0px;
+      padding-left: 20px;
+    }
+    .advantages-container {
+      padding-left: 20px;
+      .advantages-list {
+        padding-left: 5px;
+        .advantages-item {
+          .text-container {
+            font-size: 18px;
+            .icon-database {
+              top: 0px;
+            }
+            .icon-certificate {
+              top: 0px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .feature-section {
+    .img-wrapper .logos-container .logos-list li {
+      margin-right: 10px;
+    }
+    .img-wrapper .image-container .info-container .button-container .read-more-container {
+      a {
+        font-size: 20px;
+      }
+    }
+
+  }
+  .learn-more-section {
+    .text-container {
+      border-right: 0px;
+    }
+  }
+
+  .media-section {
+    a {
+      margin-right: 25px;
+    }
+  }
+
+  footer .costumer-service-wrapper .title-container, footer .about-us-wrapper .title-container {
+    font-size: 18px;
+
+  }
+  footer .title-container {
+    font-size: 18px;
+  }
+  footer .find-us-wrapper .find-us-list li a {
+    font-size: 18px;
+  }
+
+  footer .costumer-service-wrapper, footer .about-us-wrapper {
+    padding-top: 20px;
+  }
+  footer .costumer-service-wrapper a, footer .about-us-wrapper a {
+    font-size: 18px;
+  }
+  footer .find-us-wrapper .find-us-list li .text-container {
+    font-size: 18px;
+    max-width: 90%;
+  }
+  .footer .find-us-wrapper .title-container {
+    margin-bottom: 20px;
+  }
+
+  //About us page
+  .about-us-page {
+    .learn-more-about-us-section {
+      .title-container {
+        margin-top: 20%;
+      }
+    }
+  }
+
+  .about-us-page .team-info-container .members-list  {
+    padding: 0px;
+  }
+  .about-us-page .team-info-container .members-list .team-member {
+    margin-right: 15px;
+    max-width: 350px;
+    min-height: 443px;
+  }
+
+  .about-us-page .team-info-container .members-list .team-member:nth-child(4), .about-us-page .team-info-container .members-list .team-member:nth-child(8) {
+    margin-right: 15px;
+  }
+
+
+  //Ranking page
+
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container .title-container {
+    font-size: 30px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container .city-container {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a{
+    width: 55px;
+  }
+  .ranking-page .image-for-mobile img{
+    width: 100%;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container {
+    width: 31%;
+    float: right;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a .share-icon {
+    margin-left: 7px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a .like-icon {
+    margin-left: 7px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .learn-more-button a,
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .go-to-website-button a {
+    max-width: 48%;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .main-text-container {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .infoBox {
+    max-width: 600px;
+    width: 600px;
+  }
+
+  .ranking-page #map .infoBox .title-container .title-text {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  .ranking-page #map .infoBox .title-container .location-container {
+    padding-left: 20px;
+    font-size: 12px;
+  }
+  .ranking-page #map .infoBox .footer-section {
+    width: 66%;
+    padding-left: 20px;
+    margin-top: 30px;
+    position: relative;
+    left: 10px;
+
+  }
+  .ranking-page #map .infoBox .title-container {
+    width: 45%;
+  }
+  .ranking-page #map .infoBox .directions-container {
+    width: 20%;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  // Place page
+
+  .place-page .main-info-container .text-container {
+    font-size: 17px;
+  }
+
+  .place-page .b_slider .slick-next {
+    display: none !important;
+  }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .header{
+    .navbar {
+      .pages-section {
+        padding-left: 0px;
+        .pages-list {
+          padding-left: 95px;
+        }
+        .menu-button {
+          .menu-link {
+            width: 60px;
+            .menu-button-text {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .search-section {
+    .container-fluid .search-field-container .search-wrapper {
+      .search_field_input {
+        width: auto;
+      }
+      .search_button {
+        max-width: 170px;
+      }
+    }
+    #s2id_search_select {
+      display: none;
+    }
+  }
+
+  .places-section {
+    .main-place-container {
+      img {
+        width: 100%;
+      }
+    }
+    .small-places-container {
+      margin-top: 10px;
+      .place-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .feature-section {
+
+    .img-wrapper {
+      .image-container {
+        min-height: 550px;
+      }
+    }
+    .img-wrapper .image-container .info-container {
+      .text-container {
+        font-size: 20px;
+      }
+      .category-container {
+        margin-top: 13%;
+      }
+      .logos-container {
+        .logos-list {
+          margin-top: 20px;
+          li {
+            max-width: 15%;
+            margin-right: 0px;
+          }
+          img {
+          }
+        }
+
+      }
+    }
+    .img-wrapper .image-container .info-container .button-container .read-more-container {
+      a {
+        font-size: 20px;
+      }
+    }
+
+  }
+
+  .learn-more-section {
+    .progress-container .progress-list .progress-item .progress-name-container {
+      font-size: 17.5px;
+    }
+
+    .text-container {
+      border: 0px;
+    }
+    .progress-list {
+      padding-left: 0px;
+    }
+  }
+
+
+
+  .media-section {
+    a {
+      margin-right: 0px;
+      text-align: center;
+      width: 100%;
+      margin-top: 10px;
+      img {
+        max-width: 40%;
+
+      }
+    }
+  }
+
+  .feature-section .img-wrapper .image-container .info-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .learn-more-section .text-container {
+    padding-right: 0px;
+  }
+
+
+  footer .costumer-service-wrapper .title-container, footer .about-us-wrapper .title-container {
+    font-size: 16px;
+    min-height: 82px;
+
+  }
+  footer .title-container {
+    font-size: 16px;
+  }
+
+  footer .find-us-wrapper .find-us-list li a {
+    font-size: 14px;
+  }
+  footer .costumer-service-wrapper a, footer .about-us-wrapper a {
+    font-size: 16px;
+  }
+  footer .find-us-wrapper {
+    padding-top: 30px;
+  }
+  footer .find-us-wrapper .find-us-list li .text-container {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .about-us-page .learn-more-about-us-section .banner-container .title-container {
+    margin-top: 20%;
+  }
+
+  .about-us-page .team-info-container .members-list .team-member {
+    max-width: 360px;
+    min-height: 443px;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+
+  .place-page .buttons-wrapper {
+    padding: 0px;
+  }
+  .place-page .places-buttons-section .directions-container {
+    background-position: 12px 27px;
+  }
+  .place-page .places-buttons-section .contact-container {
+    background-position: 15px 25px;
+  }
+  .place-page .places-buttons-section .website-container {
+    background-position: 15px 24px;
+  }
+  .place-page .places-buttons-section .view-menu-container {
+    background-position: 6px 24px;
+  }
+
+  .place-page .main-info-container .text-container {
+    font-size: 17px;
+  }
+  .place-page .b_slider .slick-next {
+    display: none !important;
+  }
+
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .search-section {
+    .city-explore-container {
+      .question-container {
+        width: 100%;
+      }
+      .guide-container {
+        width: 100%;
+      }
+      .ready-to-explore-container .text-container .link-container {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        margin-bottom: 20px;
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+@media (min-width: 480px) and (max-width: 580px) {
+  .header {
+    .cities-section .cities-inner .city-list li a {
+      font-size: 11px;
+    }
+    .navbar {
+
+      .pages-section {
+        .pages-list {
+          padding-left: 74px;
+        }
+        .search-field-wrapper {
+          width: 73%;
+          margin-left: 27px;
+          .search-field-input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .header{
+    .cities-section .cities-inner .city-list li a {
+      font-size: 11px;
+    }
+    .navbar {
+      .logo-section {
+        .tenbest-logo,.city-logo {
+          font-size: 22px;
+        }
+      }
+
+      .pages-section {
+        padding-left: 0px;
+        .pages-list {
+          float: right;
+          padding-left: 50px;
+          li.page-link a {
+            margin-right: 10px;
+          }
+        }
+
+
+        .menu-button {
+          margin-left: 0px;
+          margin-top: 0px;
+          margin-right: 5px;
+          &.pressed {
+            float: left;
+          }
+
+          a.menu-link {
+            margin-top: 0px;
+            margin-left: 0px;
+          }
+          .menu-link {
+            width: 152px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 0px;
+            float: right;
+            .menu-button-text {
+              display: block;
+            }
+          }
+        }
+        .search-field-wrapper {
+          width: 60%;
+          margin-left: 30px;
+          .search-field-input {
+            width: 100%;
+          }
+        }
+
+
+      }
+    }
+  }
+  .search-section {
+    .container-fluid .search-field-container .search-wrapper {
+      .search_field_input {
+        width: auto;
+      }
+      .search_button {
+        width: 100%;
+        border-radius: 3px;
+        margin-top: 10px;
+        max-width: 100%;
+
+      }
+    }
+    #s2id_search_select {
+      display: none;
+    }
+
+    .city-explore-container {
+      .question-container {
+        width: 100%;
+      }
+      .guide-container {
+        width: 100%;
+      }
+      .ready-to-explore-container .text-container .link-container {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        margin-bottom: 20px;
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .we-make-easy-section {
+    .text-info-container {
+      font-size: 18px;
+      border-right: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .advantages-container {
+      padding-left: 20px;
+      padding-right: 20px;
+      .advantages-list {
+        padding-left: 5px;
+        .advantages-item {
+          .text-container {
+            font-size: 18px;
+            text-align: center;
+            div {
+              width: 100%;
+              display: inline-block;
+            }
+            .icon-database {
+              top: 0px;
+              left: 43%;
+            }
+            .icon-certificate {
+              top: 0px;
+              left: 43%;
+            }
+            .icon-map {
+              left: 43%;
+            }
+          }
+
+        }
+      }
+    }
+    .city-guide-container {
+      .title-container {
+        .text {
+          font-size: 29px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  .feature-section {
+    .img-wrapper .image-container {
+      min-height: 720px;
+    }
+    .img-wrapper .image-container .info-container {
+      .category-container {
+        margin-top: 20px;
+      }
+      .logos-container {
+        .logos-list {
+          margin-top: 20px;
+          li {
+            max-width: 15%;
+            margin-right: 0px;
+          }
+          img {
+          }
+        }
+
+      }
+    }
+    .img-wrapper .image-container .info-container .button-container .read-more-container {
+      width: 100%;
+      text-align: center;
+    }
+    .img-wrapper .image-container .info-container .button-container{
+      .social-container {
+        width: 100%;
+        .social-list {
+          text-align: center;
+          top: 24px;
+          position: relative;
+
+        }
+      }
+    }
+
+  }
+  .learn-more-section {
+    .text-container {
+      padding-right: 0px;
+    }
+    .progress-container .progress-list .progress-item {
+      padding-right: 30px;
+      .progress-bar-wrapper{
+        margin-left: 55px;
+      }
+    }
+  }
+  .city-guide-section .city-guide-container .title-container {
+    line-height: 35px;
+  }
+
+  .search-section .city-explore-container .ready-to-explore-container .text-container .guide-container {
+    padding-left: 5px;
+  }
+  .feature-section .img-wrapper .image-container .info-container {
+    padding-right: 0px;
+  }
+
+  .places-section .place-content-container .info-container .title-container {
+    font-size: 18px;
+  }
+
+  footer .newsletter-container {
+    padding-top: 0px;
+  }
+  footer .connect-wrapper {
+    padding-top: 0px;
+  }
+  footer .newsletter-container .join-wrapper {
+    margin-right: 15px;
+    background-color: transparent;
+    .join-button {
+      width: 90%;
+      margin-top: 5px;
+    }
+  }
+  footer .newsletter-container .join-wrapper .newsletter_input {
+    margin-left: 0px;
+    width: 90%;
+  }
+  footer .costumer-service-wrapper, footer .about-us-wrapper {
+    padding-top: 15px;
+  }
+  footer .costumer-service-wrapper .title-container, footer .about-us-wrapper .title-container {
+    line-height: 15px;
+    min-height: 45px;
+  }
+  footer .find-us-wrapper {
+    padding-top: 5px;
+    .find-us-list {
+      width: 100%;
+
+    }
+  }
+  footer .find-us-wrapper .find-us-list li.location .text-container {
+    max-width: 82%;
+  }
+
+
+  .about-us-page .learn-more-about-us-section .banner-container .title-container {
+    margin-top: 30%;
+  }
+
+
+  .ranking-page .main-banner-section .banner-container .category-title {
+    margin-top: 22%;
+  }
+  .ranking-page {
+    .header-section {
+      float: left;
+    }
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .name-container {
+    width: 70%;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a{
+    width: 55px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a .share-icon,
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a .like-icon  {
+    margin-left: 8px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container {
+    top: 0px;
+    left: -4px;
+    width: 100%;
+  }
+  .ranking-page .places-list-section .place-container .info-container .main-text-container {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  .ranking-page .image-for-mobile img{
+    width: 100%;
+  }
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .learn-more-button a,
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .go-to-website-button a{
+    max-width: 47%;
+  }
+  .infoBox {
+    max-width: 280px;
+  }
+  .ranking-page #map .infoBox .title-container {
+    font-size: 20px;
+  }
+  .ranking-page #map .infoBox .title-container .title-text {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .ranking-page #map .infoBox .title-container .location-container {
+    padding-left: 5px;
+    font-size: 12px;
+  }
+  .ranking-page #map .infoBox .directions-container {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .place-page .places-buttons-section a {
+    padding-top: 30px;
+  }
+
+  .place-page .places-buttons-section .directions-container {
+    background-position: 46% 15px;
+  }
+  .place-page .places-buttons-section .contact-container {
+    background-position: 46% 15px;
+  }
+  .place-page .places-buttons-section .website-container {
+    background-position: 46% 15px;
+  }
+  .place-page .places-buttons-section .view-menu-container {
+    background-position: 46% 15px;
+  }
+
+
+}
+
+
+
+@media (min-width: 480px) and (max-width: 545px) {
+  .header .navbar .pages-section .pages-list {
+    padding-left: 34px;
+  }
+  .header .navbar .pages-section .pages-list li.page-link a {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .search-section .city-explore-container .ready-to-explore-container {
+    padding-left: 2%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .we-make-easy-section .text-info-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a{
+    width: 55px;
+  }
+  .ranking-page .image-for-mobile img{
+    width: 100%;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container {
+    width: 31%;
+    float: right;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a .share-icon {
+    margin-left: 7px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a .like-icon {
+    margin-left: 7px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .learn-more-button a,
+  .ranking-page .places-list-section .place-container .info-container .buttons-container .go-to-website-button a {
+    max-width: 48%;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .ranking-page .places-list-section .place-container .info-container .main-text-container {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .infoBox {
+    max-width: 330px;
+  }
+  .ranking-page #map .infoBox .title-container {
+    font-size: 20px;
+  }
+  .ranking-page #map .infoBox .title-container .title-text {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .ranking-page #map .infoBox .title-container .location-container {
+    padding-left: 5px;
+    font-size: 12px;
+  }
+  .ranking-page #map .infoBox .directions-container {
+    float: left;
+    margin-left: 5px;
+  }
+
+}
+@media (min-width: 480px) and (max-width: 578px) {
+  .learn-more-section .progress-container .progress-list .progress-item .progress-bar-wrapper {
+    margin-left: 55px;
+  }
+
+  footer .newsletter-container {
+    padding-top: 0px;
+  }
+  footer .connect-wrapper {
+    padding-top: 0px;
+  }
+  footer .newsletter-container .join-wrapper {
+    margin-right: 15px;
+    background-color: transparent;
+    .join-button {
+      width: 90%;
+      margin-top: 5px;
+    }
+  }
+  footer .newsletter-container .join-wrapper .newsletter_input {
+    margin-left: 0px;
+    width: 90%;
+  }
+  footer .costumer-service-wrapper, footer .about-us-wrapper {
+    padding-top: 15px;
+  }
+  footer .costumer-service-wrapper .title-container, footer .about-us-wrapper .title-container {
+    line-height: 15px;
+    min-height: 45px;
+  }
+  footer .find-us-wrapper {
+    padding-top: 5px;
+  }
+  footer .find-us-wrapper .find-us-list li.location .text-container {
+    max-width: 82%;
+  }
+
+  //About us page
+  .about-us-page {
+    .learn-more-about-us-section {
+      .title-container {
+        margin-top: 20%;
+      }
+    }
+  }
+
+
+}
+
+@media (min-width: 0px) and (max-width: 479px) {
+  footer .find-us-wrapper .find-us-list li .text-container {
+    max-width: 80%;
+    padding-left: 6px;
+    font-size: 12px;
+  }
+  footer .find-us-wrapper .find-us-list li a {
+    font-size: 12px;
+  }
+  .find-us-container {
+    padding-left: 2px;
+    padding-right: 10px;
+  }
+  footer .find-us-wrapper .title-container {
+    padding-left: 15px;
+  }
+  footer .costumer-service-wrapper .title-container, footer .about-us-wrapper .title-container {
+    text-align: center;
+    font-size: 12px;
+    padding-left: 0px;
+  }
+  footer .costumer-service-wrapper a, footer .about-us-wrapper a {
+    text-align: center;
+    font-size: 12px;
+    padding-left: 0px;
+  }
+  footer .connect-wrapper .title-container {
+    font-size: 12px;
+    text-align: center;
+    padding-left: 0px;
+  }
+  footer .newsletter-container .title-container {
+    font-size: 12px;
+    padding-left: 0px;
+    text-align: center;
+  }
+  footer .find-us-wrapper .title-container {
+    padding-left: 15px;
+    font-size: 12px;
+  }
+
+}
+
+@media (min-width: 578px) and (max-width: 690px) {
+  footer .find-us-wrapper .find-us-list li.location .text-container {
+    max-width: 82%;
+  }
+
+}
+@media (min-width: 320px) and (max-width: 540px) {
+  .about-us-page .team-info-container .members-list .team-member {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .about-us-page .team-info-container .members-list .team-member:nth-child(4), .about-us-page .team-info-container .members-list .team-member:nth-child(8) {
+    margin-left: 0px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .about-us-page .team-info-container .members-list {
+    padding: 0;
+  }
+  .about-us-page .team-info-container .members-list .team-member {
+    max-width: 234px;
+    margin-right: 10px;
+  }
+  .about-us-page .team-info-container .members-list .team-member:hover .scroll-up-container .social-container .social-list li {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 501px) {
+  .about-us-page .our-partners-section .partners-list li {
+    width: 50%;
+    margin-right: 0px;
+  }
+}
