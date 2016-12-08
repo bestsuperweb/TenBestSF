@@ -32,5 +32,23 @@ class IndexController < ApplicationController
 	def ranking
 		
 	end
+
+	def creat
+		@result = ''
+		(1..5).each do |int|
+			company = Company.new(name: "company-#{int}", category: int, subcategory: int+1, city: "Toront-#{int}")
+			if company.save
+				@result += 'success-'
+			end
+			category = Category.new(name: "category-#{int}")
+			if category.save
+				@result += 'success-'
+			end
+			subcategory = SubCategory.new(name: "sub category-#{int}", category_id: int)
+			if subcategory.save
+				@result += 'success/'
+			end
+		end
+	end
 	
 end

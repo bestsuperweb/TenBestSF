@@ -5,7 +5,7 @@ class CompanyTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @company = Company.new(name: "Example Company", category: "example category", subcategory: 'example sub category', city: 'Toronto')
+    @company = Company.new(name: "Example Company", category: 1, subcategory: 2, city: 'Toronto')
   end
 
   test "should be valid" do
