@@ -15,6 +15,8 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+	* local: <p>>> rails db:migrate</p>
+	* heroku: <p>>> heroku run rake db:migrate</p>
 
 * Database initialization
 
