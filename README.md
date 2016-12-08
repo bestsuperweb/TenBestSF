@@ -14,11 +14,9 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation & initialization
 	* local: <p>>> rails db:migrate</p>
 	* heroku: <p>>> heroku run rake db:migrate</p>
-
-* Database initialization
 
 * How to run the test suite<br>
 	* IndexController: <p>>> rails test test/controllers/index_controller_test.rb<br>
