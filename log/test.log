@@ -718,3 +718,626 @@ CompanyTest: test_name_should_be_unique
   [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
   [1m[35m (22.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "category" integer, "subcategory" integer, "city" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "sub_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_sub_categories_on_category_id_and_created_at" ON "sub_categories" ("category_id", "created_at")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sub_categories_on_category_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sub_categories_on_category_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_sub_categories_on_category_id" ON "sub_categories" ("category_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161208195733')[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161208181218'), ('20161208193054');
+
+[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-12-08 20:02:59 UTC], ["updated_at", 2016-12-08 20:02:59 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:02:59.991678', '2016-12-08 20:02:59.991678', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:02:59.991678', '2016-12-08 20:02:59.991678', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:02:59.995853', '2016-12-08 20:02:59.995853', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:02:59.995853', '2016-12-08 20:02:59.995853', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:02:59.997614', '2016-12-08 20:02:59.997614', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:02:59.997614', '2016-12-08 20:02:59.997614', 298486374, 298486374)[0m
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:03:00 UTC], ["updated_at", 2016-12-08 20:03:00 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (15.6ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (1.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:11:45.384767', '2016-12-08 20:11:45.384767', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:11:45.384767', '2016-12-08 20:11:45.384767', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:11:45.426897', '2016-12-08 20:11:45.426897', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:11:45.426897', '2016-12-08 20:11:45.426897', 298486374)[0m
+  [1m[36mFixture Delete (24.3ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:11:45.428747', '2016-12-08 20:11:45.428747', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:11:45.428747', '2016-12-08 20:11:45.428747', 298486374, 298486374)[0m
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:11:45 UTC], ["updated_at", 2016-12-08 20:11:45 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (99.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:11:45 UTC], ["updated_at", 2016-12-08 20:11:45 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (18.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (26.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (24.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:13:36.575752', '2016-12-08 20:13:36.575752', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:13:36.575752', '2016-12-08 20:13:36.575752', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:13:36.624480', '2016-12-08 20:13:36.624480', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:13:36.624480', '2016-12-08 20:13:36.624480', 298486374)[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:13:36.626303', '2016-12-08 20:13:36.626303', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:13:36.626303', '2016-12-08 20:13:36.626303', 298486374, 298486374)[0m
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:13:36 UTC], ["updated_at", 2016-12-08 20:13:36 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:13:36 UTC], ["updated_at", 2016-12-08 20:13:36 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (18.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:14:11.496392', '2016-12-08 20:14:11.496392', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:14:11.496392', '2016-12-08 20:14:11.496392', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:14:11.509470', '2016-12-08 20:14:11.509470', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:14:11.509470', '2016-12-08 20:14:11.509470', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:14:11.511322', '2016-12-08 20:14:11.511322', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:14:11.511322', '2016-12-08 20:14:11.511322', 298486374, 298486374)[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:14:11 UTC], ["updated_at", 2016-12-08 20:14:11 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:14:11 UTC], ["updated_at", 2016-12-08 20:14:11 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:18:16.825756', '2016-12-08 20:18:16.825756', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:18:16.825756', '2016-12-08 20:18:16.825756', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:18:16.830639', '2016-12-08 20:18:16.830639', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:18:16.830639', '2016-12-08 20:18:16.830639', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:18:16.832908', '2016-12-08 20:18:16.832908', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:18:16.832908', '2016-12-08 20:18:16.832908', 298486374, 298486374)[0m
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:18:16 UTC], ["updated_at", 2016-12-08 20:18:16 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:18:16 UTC], ["updated_at", 2016-12-08 20:18:16 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (30.5ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:19:00.389708', '2016-12-08 20:19:00.389708', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:19:00.389708', '2016-12-08 20:19:00.389708', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:19:00.444749', '2016-12-08 20:19:00.444749', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:19:00.444749', '2016-12-08 20:19:00.444749', 298486374)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:19:00.446527', '2016-12-08 20:19:00.446527', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:19:00.446527', '2016-12-08 20:19:00.446527', 298486374, 298486374)[0m
+  [1m[35m (26.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:19:00 UTC], ["updated_at", 2016-12-08 20:19:00 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (13.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:19:00 UTC], ["updated_at", 2016-12-08 20:19:00 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (5.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (48.3ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:25:16.282825', '2016-12-08 20:25:16.282825', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-12-08 20:25:16.282825', '2016-12-08 20:25:16.282825', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, 'MyString', '2016-12-08 20:25:16.338209', '2016-12-08 20:25:16.338209', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at", "id") VALUES ('MyString', 2, 2, 'MyString', '2016-12-08 20:25:16.338209', '2016-12-08 20:25:16.338209', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:25:16.341477', '2016-12-08 20:25:16.341477', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2016-12-08 20:25:16.341477', '2016-12-08 20:25:16.341477', 298486374, 298486374)[0m
+  [1m[35m (17.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 0], ["subcategory", 0], ["city", "Toronto"], ["created_at", 2016-12-08 20:25:16 UTC], ["updated_at", 2016-12-08 20:25:16 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+CategoryTest: test_associated_sub_categories_should_be_destroyed
+----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:25:16 UTC], ["updated_at", 2016-12-08 20:25:16 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example Sub Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Example Sub Category"], ["category_id", 980190963], ["created_at", 2016-12-08 20:25:16 UTC], ["updated_at", 2016-12-08 20:25:16 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "sub_categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."category_id" = ?[0m  [["category_id", 980190963]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "sub_categories" WHERE "sub_categories"."id" = ?[0m  [["id", 980190963]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "sub_categories"[0m
+  [1m[35m (45.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2016-12-08 20:25:16 UTC], ["updated_at", 2016-12-08 20:25:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

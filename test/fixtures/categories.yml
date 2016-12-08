@@ -2,12 +2,6 @@
 
 one:
   name: MyString
-  category: 1
-  subcategory: 1
-  city: MyString
 
 two:
   name: MyString
-  category: 2
-  subcategory: 2
-  city: MyString

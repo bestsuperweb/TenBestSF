@@ -23,10 +23,10 @@ Things you may want to cover:
 					 >> ....<br>
 					 >> Finished in 1.616466s, 2.4745 runs/s, 4.9491 assertions/s.<br>
 					 >>	4 runs, 8 assertions, 0 failures, 0 errors, 0 skips<br></p>
-	* Company Model: <p>>>rails test test/models/company_test.rb<br>
+	* Test Models: <p>>>rails test:models <br>
 					>>...<br>
-					>>Finished in 0.218133s, 22.9218 runs/s, 22.9218 assertions/s.<br>
-					>>5 runs, 5 assertions, 0 failures, 0 errors, 0 skips<br>
+					>>Finished in 0.438195s, 27.3851 runs/s, 27.3851 assertions/s.<br>
+					>>12 runs, 12 assertions, 0 failures, 0 errors, 0 skips<br>
 					</p>
 
 * Services (job queues, cache servers, search engines, etc.)

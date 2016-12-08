@@ -2,8 +2,8 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
   def change
     create_table :companies do |t|
       t.string :name
-      t.string :category
-      t.string :subcategory
+      t.integer :category
+      t.integer :subcategory
       t.string :city
 
       t.timestamps

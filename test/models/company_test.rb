@@ -13,12 +13,12 @@ class CompanyTest < ActiveSupport::TestCase
   end
 
   test "name should be present" do
-    @company.name = "     "
+    @company.name = nil
     assert_not @company.valid?
   end
 
   test "category should be present" do
-    @company.category = "     "
+    @company.category = nil
     assert_not @company.valid?
   end
 
