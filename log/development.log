@@ -36567,3 +36567,1495 @@ Migrating to CreateSubCategories (20161208195733)
             FROM sqlite_temp_master
             WHERE name='index_sub_categories_on_category_id' AND type='index'
 [0m
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 15:33:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (1129.8ms)
+  Rendered layouts/_header.html.erb (17.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1499ms (Views: 1431.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 15:36:45 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (50.9ms)
+  Rendered layouts/_header.html.erb (42.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 302ms (Views: 270.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 15:42:04 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (178.5ms)
+  Rendered layouts/_header.html.erb (28.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 694ms (Views: 670.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 15:50:29 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"test", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  Rendered index/home.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Volumes/WORK/ruby/TenBestSF/app/views/index/home.html.erb:390: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Volumes/WORK/ruby/TenBestSF/app/views/index/home.html.erb:392: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/index/home.html.erb:390: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/index/home.html.erb:392: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+Started GET "/" for ::1 at 2016-12-08 16:04:02 -0500
+Processing by IndexController#home as HTML
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for #<IndexController:0x007fdba8a13570>
+Did you mean?  print):
+  
+app/controllers/index_controller.rb:3:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.1ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (128.1ms)
+Started GET "/" for ::1 at 2016-12-08 16:04:19 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (54.7ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    49:     </div>
+    50:   </section>
+    51:   <!-- Search Result Section -->
+    52:   <% unless @campanies.nil? and @campanies.length > 0 %>    
+    53:   <section class="search-result">
+    54:     <div class="container">
+    55:       <table class="table-stripe">
+  
+app/views/index/home.html.erb:52:in `_app_views_index_home_html_erb___67322945115917038_70290709414800'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.3ms)
+Started GET "/" for ::1 at 2016-12-08 16:06:30 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    49:     </div>
+    50:   </section>
+    51:   <!-- Search Result Section -->
+    52:   <% unless @campanies.nil? and @campanies.length <= 0 %>    
+    53:   <section class="search-result">
+    54:     <div class="container">
+    55:       <table class="table-stripe">
+  
+app/views/index/home.html.erb:52:in `_app_views_index_home_html_erb___67322945115917038_70290688085680'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.9ms)
+Started GET "/" for ::1 at 2016-12-08 16:08:00 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `size' for nil:NilClass):
+    49:     </div>
+    50:   </section>
+    51:   <!-- Search Result Section -->
+    52:   <% unless @campanies.nil? and @campanies.size <= 0 %>    
+    53:   <section class="search-result">
+    54:     <div class="container">
+    55:       <table class="table-stripe">
+  
+app/views/index/home.html.erb:52:in `_app_views_index_home_html_erb___67322945115917038_70290653305760'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.5ms)
+Started GET "/" for ::1 at 2016-12-08 16:08:19 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (110.3ms)
+  Rendered layouts/_header.html.erb (26.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 383ms (Views: 381.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=company&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:08:37 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"company", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (17.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:08:54 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:13:53 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (77.5ms)
+  Rendered layouts/_header.html.erb (33.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 381ms (Views: 356.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=one&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:14:01 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"one", "search_select"=>"", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:14:07 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.html.erb (16.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 87ms (Views: 85.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:19:02 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (77.2ms)
+  Rendered layouts/_header.html.erb (27.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 400ms (Views: 372.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:19:14 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_header.html.erb (17.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:19:40 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_header.html.erb (15.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 92ms (Views: 89.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=Com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:20:25 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (80.2ms)
+  Rendered layouts/_header.html.erb (27.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 348ms (Views: 331.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:20:36 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_header.html.erb (27.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 146ms (Views: 144.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:21:12 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (86.1ms)
+  Rendered layouts/_header.html.erb (26.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 407ms (Views: 404.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:21:53 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_header.html.erb (26.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 146ms (Views: 144.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:22:19 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (33.7ms)
+  Rendered layouts/_header.html.erb (26.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 184.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:22:32 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_header.html.erb (16.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 126ms (Views: 123.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:22:46 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_header.html.erb (15.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:23:07 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (15.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 92.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:23:10 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category == '') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_header.html.erb (16.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 95ms (Views: 92.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:23:20 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_header.html.erb (22.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 95ms (Views: 93.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:24:56 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category == 'test') ORDER BY name DESC[0m
+  Rendered index/home.html.erb within layouts/application (108.2ms)
+  Rendered layouts/_header.html.erb (26.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 406ms (Views: 402.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:58:50 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unsupported argument type: name (Symbol)):
+  
+app/controllers/index_controller.rb:4:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.9ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:59:21 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (name = 'test')[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation []>
+Did you mean?  ids):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.7ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 16:59:55 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (name = 'test')[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for #<ActiveRecord::Relation []>
+Did you mean?  ids):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.1ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:05:19 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (Unsupported argument type: name (Symbol)):
+  
+app/controllers/index_controller.rb:4:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.6ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:06:31 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.9ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:07:20 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.4ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:07:57 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.5ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:09:34 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.0ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:13:12 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:5:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.9ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:13:47 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:4:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.1ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:14:47 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:4:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.2ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:16:37 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:7:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.4ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:16:56 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:7:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:16:58 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:7:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.4ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=test&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:16:59 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"test", "commit"=>"Coming Soon!"}
+Unpermitted parameters: utf8, commit
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:7:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.1ms)
+Started GET "/" for ::1 at 2016-12-08 17:17:13 -0500
+Processing by IndexController#home as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:7:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.0ms)
+Started GET "/" for ::1 at 2016-12-08 17:17:45 -0500
+Processing by IndexController#home as HTML
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `search_params' for #<IndexController:0x007fdba47c9f20>):
+  
+app/controllers/index_controller.rb:6:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.4ms)
+Started GET "/" for ::1 at 2016-12-08 17:17:58 -0500
+Processing by IndexController#home as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/index_controller.rb:6:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.8ms)
+Started GET "/" for ::1 at 2016-12-08 17:18:34 -0500
+Processing by IndexController#home as HTML
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `search_params' for #<IndexController:0x007fdba36f73f0>):
+  
+app/controllers/index_controller.rb:9:in `home'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.2ms)
+Started GET "/" for ::1 at 2016-12-08 17:19:25 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (156.3ms)
+  Rendered layouts/_header.html.erb (30.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 544ms (Views: 520.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 17:19:58 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_header.html.erb (53.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 638ms (Views: 635.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 17:20:19 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 17:20:43 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.html.erb (22.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 188ms (Views: 186.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 17:20:55 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_header.html.erb (21.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 140ms (Views: 138.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:21:35 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  Rendered index/home.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `sub_category' for #<Company:0x007fdba2d89188>
+Did you mean?  subcategory
+               subcategory=
+               subcategory?):
+    60:         <% @companies.each do |company|%>
+    61:           <tr><td><%= company.name %></td></tr>
+    62:           <tr><td><%= company.category %></td></tr>
+    63:           <tr><td><%= company.sub_category %></td></tr>
+    64:           <tr><td><%= company.city %></td></tr>
+    65:         <% end %>
+    66:       </table> 
+  
+app/views/index/home.html.erb:63:in `block in _app_views_index_home_html_erb___67322945115917038_70290687941480'
+app/views/index/home.html.erb:60:in `_app_views_index_home_html_erb___67322945115917038_70290687941480'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.1ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:21:55 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  Rendered index/home.html.erb within layouts/application (90.6ms)
+  Rendered layouts/_header.html.erb (25.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 413ms (Views: 411.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:23:39 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (23.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Subcategory):
+    60:         <% @companies.each do |company|%>
+    61:           <tr><td><%= company.name %></td>
+    62:           <td><%= Category.find(company.category).name %></td>
+    63:           <td><%= Subcategory.find(company.subcategory).name %></td>
+    64:           <td><%= company.city %></td></tr>
+    65:         <% end %>
+    66:       </table> 
+  
+app/views/index/home.html.erb:63:in `block in _app_views_index_home_html_erb___67322945115917038_70290702141460'
+app/views/index/home.html.erb:60:in `_app_views_index_home_html_erb___67322945115917038_70290702141460'
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/coolplum/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.1ms)
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:23:50 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (18.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (115.4ms)
+  Rendered layouts/_header.html.erb (26.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 299ms (Views: 278.0ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:24:13 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (10.2ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (33.8ms)
+  Rendered layouts/_header.html.erb (24.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 204ms (Views: 191.1ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:25:01 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (9.4ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (40.9ms)
+  Rendered layouts/_header.html.erb (28.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 204ms (Views: 191.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:27:07 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (165.5ms)
+  Rendered layouts/_header.html.erb (58.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 474ms (Views: 470.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:30:27 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (146.9ms)
+  Rendered layouts/_header.html.erb (71.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 698ms (Views: 678.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:33:49 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (121.7ms)
+  Rendered layouts/_header.html.erb (25.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1666ms (Views: 1645.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:38:52 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (74.3ms)
+  Rendered layouts/_header.html.erb (25.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 2141ms (Views: 2120.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/about" for ::1 at 2016-12-08 17:39:33 -0500
+Processing by IndexController#about as HTML
+  Rendering index/about.html.erb within layouts/application
+  Rendered index/about.html.erb within layouts/application (40.4ms)
+  Rendered layouts/_header.html.erb (25.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 245ms (Views: 238.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2016-12-08 17:39:33 -0500
+Processing by IndexController#about as HTML
+  Rendering index/about.html.erb within layouts/application
+  Rendered index/about.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_header.html.erb (19.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 153ms (Views: 151.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for ::1 at 2016-12-08 17:39:43 -0500
+Processing by IndexController#contact as HTML
+  Rendering index/contact.html.erb within layouts/application
+  Rendered index/contact.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (18.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 95ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for ::1 at 2016-12-08 17:39:43 -0500
+Processing by IndexController#contact as HTML
+  Rendering index/contact.html.erb within layouts/application
+  Rendered index/contact.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (15.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2016-12-08 17:39:46 -0500
+Processing by IndexController#about as HTML
+  Rendering index/about.html.erb within layouts/application
+  Rendered index/about.html.erb within layouts/application (40.8ms)
+  Rendered layouts/_header.html.erb (12.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 137ms (Views: 106.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 17:39:47 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (86.8ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 192ms (Views: 167.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:39:53 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (15.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:40:08 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (24.9ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (41.1ms)
+  Rendered layouts/_header.html.erb (18.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 125ms (Views: 97.6ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/ranking" for ::1 at 2016-12-08 17:40:37 -0500
+Processing by IndexController#ranking as HTML
+  Rendering index/ranking.html.erb within layouts/application
+  Rendered index/ranking.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_header.html.erb (13.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 104ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/place-google-map.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-12-08 17:41:19 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (122.1ms)
+  Rendered layouts/_header.html.erb (28.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 432ms (Views: 411.7ms | ActiveRecord: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/place-google-map.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-12-08 17:41:20 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (17.5ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:41:59 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (57.3ms)
+  Rendered layouts/_header.html.erb (23.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 214ms (Views: 194.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=ghost&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:42:05 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ghost", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%ghost%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (29.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 94.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=company&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:42:37 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"company", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%company%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (5.4ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (53.6ms)
+  Rendered layouts/_header.html.erb (17.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 132ms (Views: 123.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:43:11 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%' AND category = '')[0m
+  Rendered index/home.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (15.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 95ms (Views: 90.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:44:57 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (35.6ms)
+  Rendered layouts/_header.html.erb (19.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 124ms (Views: 118.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:05 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (25.3ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 116ms (Views: 112.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=category-five&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:12 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"category-five", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-five"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = 5)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (17.5ms)
+  Rendered layouts/_header.html.erb (15.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 90ms (Views: 87.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=category-three&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:16 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"category-three", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-three"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = 3)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_header.html.erb (17.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 97ms (Views: 94.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:27 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (17.9ms)
+  Rendered layouts/_header.html.erb (17.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 105ms (Views: 102.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:36 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_header.html.erb (23.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:39 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_header.html.erb (27.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 121ms (Views: 118.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:45:43 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_header.html.erb (16.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 96ms (Views: 93.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:21 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (66.2ms)
+  Rendered layouts/_header.html.erb (16.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 181ms (Views: 168.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:23 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (16.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:26 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (22.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 87.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=category-two&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:29 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"category-two", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-two"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = 2)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (33.3ms)
+  Rendered layouts/_header.html.erb (14.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 130ms (Views: 99.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=category-three&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:33 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"category-three", "commit"=>"Coming Soon!"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category-three"], ["LIMIT", 1]]
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%%' AND category = 3)[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header.html.erb (17.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 94.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 17:47:39 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_header.html.erb (18.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 100ms (Views: 97.0ms | ActiveRecord: 1.0ms)
+
+

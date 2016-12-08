@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Company-one
   category: 1
   subcategory: 1
-  city: MyString
+  city: MyCity
 
 two:
-  name: MyString
+  name: Company-two
   category: 2
   subcategory: 2
-  city: MyString
+  city: MyCity

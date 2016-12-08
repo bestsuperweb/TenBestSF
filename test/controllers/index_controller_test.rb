@@ -5,7 +5,7 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   def setup
-    @base_title = "10 Best SF"
+    @base_title = "10 Best SF"   
   end
 
   test "should get home" do
@@ -31,5 +31,4 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', "Best Brunch in SF | Top Brunch Restaurant SF | #{@base_title}"
   end
-
 end

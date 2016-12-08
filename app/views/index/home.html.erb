@@ -22,8 +22,9 @@
               <%= text_field_tag :search, '', placeholder: "Search by Category", class:"search_field_input" %>
               <select name="search_select" id="search_select">
                 <option></option>
-                
-                <option value="test">Coming Soon!</option>
+                <% Category.all.each do |category| %>
+                  <option value="<%= category.name %>"><%= category.name %></option>
+                <% end %>
               </select>
               <%= f.submit 'Coming Soon!', class: "search_button sf" %>
             </div>
@@ -47,7 +48,32 @@
 
     </div>
   </section>
-
+  <!-- Search Result Section -->
+  <% unless @companies.nil? or @companies.length <= 0 %>    
+  <section class="search-result">
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Sub Category</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @companies.each do |company|%>
+            <tr><td><%= company.name %></td>
+            <td><%= Category.find(company.category).name %></td>
+            <td><%= SubCategory.find(company.subcategory).name %></td>
+            <td><%= company.city %></td></tr>
+          <% end %>
+        </tbody>
+      </table> 
+    </div>
+  </section>
+  <% end %>   
+    
   <!--Places Section-->
   <section class="places-section">
     <div class="container">
