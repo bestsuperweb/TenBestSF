@@ -118,3 +118,51 @@ Processing by IndexController#home as HTML
   Rendered layouts/_footer.html.erb (0.5ms)
 Completed 200 OK in 38ms (Views: 16.9ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+IndexControllerTest: test_should_get_place
+------------------------------------------
+Started GET "/place" for 127.0.0.1 at 2016-12-08 06:54:39 -0500
+Processing by IndexController#place as HTML
+  Rendering index/place.html.erb within layouts/application
+  Rendered index/place.html.erb within layouts/application (784.3ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 844ms (Views: 829.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+IndexControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/home" for 127.0.0.1 at 2016-12-08 06:54:40 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  Rendered index/home.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+IndexControllerTest: test_should_get_ranking
+--------------------------------------------
+Started GET "/ranking" for 127.0.0.1 at 2016-12-08 06:54:40 -0500
+Processing by IndexController#ranking as HTML
+  Rendering index/ranking.html.erb within layouts/application
+  Rendered index/ranking.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 28ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+IndexControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2016-12-08 06:54:40 -0500
+Processing by IndexController#about as HTML
+  Rendering index/about.html.erb within layouts/application
+  Rendered index/about.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
