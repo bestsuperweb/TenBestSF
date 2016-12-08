@@ -1,30 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%= csrf_meta_tags %>
-    <%
-      body_class = ''
-      title = 'Best of SF City Guide | Top Restaurants Bars & Events | 10 Best SF'
-      if current_page?(about_path)
-        body_class = 'about-us-page'
-        title = 'About Us | What We Do | 10 Best SF'
-      end
-
-      if current_page?(place_path)
-        body_class = 'place-page'
-        title = 'PLACE NAME | Top Brunch in SF | 10 Best SF'
-      end
-
-      if current_page?(ranking_path)
-        body_class = 'ranking-page'
-        title = 'Best Brunch in SF | Top Brunch Restaurant SF | 10 Best SF'
-      end    
-    %>    
+    <%= csrf_meta_tags %>    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><%= title %></title>
+    <title><%= yield(:title) %> | 10 Best SF</title>
     <meta name="description" content="10 Best SF is the premier city guide for those looking to explore San Francisco and the Greater Bay Area. We seek out the top bars, restaurants, events & more...">
 
     <%= favicon_link_tag 'favicon.ico' %>
@@ -50,7 +32,7 @@
     <![endif]-->
   </head>
   
-  <body class="<%= body_class %>">
+  <body class="<%= yield(:body_class) %>">
   <!-- Header Section -->
     <div class="header">
       <div class="cities-section">
