@@ -2,7 +2,8 @@
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url(asset_path('ajax-loader.gif')) center center no-repeat;
+    background-color: #fff;
+    background-image: url(asset_path('ajax-loader.gif')) center center no-repeat;
 }
 
 /* Icons */
@@ -13,10 +14,10 @@
     font-style: normal;
 
     src: url(asset_path('assets/slick.eot'));
-    src: url(asset_path('assets/slick.eot?#iefix')) format('embedded-opentype'),
-         url(asset_path('assets/slick.woff')) format('woff'),
-         url(asset_path('assets/slick.ttf')) format('truetype'), 
-         url(asset_path('assets/slick.svg#slick')) format('svg');
+    src: url(asset_path('assets/slick.eot?#iefix')) format('embedded-opentype');
+    src: url(asset_path('assets/slick.woff')) format('woff');
+    src: url(asset_path('assets/slick.ttf')) format('truetype'); 
+    src: url(asset_path('assets/slick.svg#slick')) format('svg');
 }
 /* Arrows */
 .slick-prev,
