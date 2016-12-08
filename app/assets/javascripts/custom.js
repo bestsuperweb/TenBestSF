@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).on('turbolinks:load',function() {
 
 
 
@@ -92,7 +92,13 @@ $( document ).ready(function() {
             $('.search-wrapper').addClass("focus")
         });
 
-
+    //Smooth scroll
+    $('.about-us-page .next-button').click(function() {
+       var target = $(this);
+       $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+    });
 
     function initialize() {
         var mapCanvas = document.getElementById('map');
@@ -151,23 +157,5 @@ $( document ).ready(function() {
         ]
     });
 
-
-
-    //Smooth scroll
-    $(function() {
-        $('.about-us-page a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-
-
+      
 });
