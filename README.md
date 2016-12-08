@@ -15,11 +15,11 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
-	IndexController: >> rails test test/controllers/index_controller_test.rb
-					 >> ....
-					 >> Finished in 1.616466s, 2.4745 runs/s, 4.9491 assertions/s. 
-					 >>	4 runs, 8 assertions, 0 failures, 0 errors, 0 skips
+* How to run the test suite<br>
+	IndexController: >> rails test test/controllers/index_controller_test.rb<br>
+					 >> ....<br>
+					 >> Finished in 1.616466s, 2.4745 runs/s, 4.9491 assertions/s.<br>
+					 >>	4 runs, 8 assertions, 0 failures, 0 errors, 0 skips<br>
 
 * Services (job queues, cache servers, search engines, etc.)
 
