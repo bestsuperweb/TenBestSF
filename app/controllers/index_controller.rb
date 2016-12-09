@@ -10,7 +10,7 @@ class IndexController < ApplicationController
 			if params[:search] == '' or params[:search].nil?
 				@companies = nil
 			else
-				@companies = Company.where( "name LIKE ?", "%#{params[:search]}%")
+				@companies = Company.where("name LIKE ?", "%#{params[:search]}%")
 			end
 		else
 			@companies = Company.where( "name LIKE ? AND category = ?", "%#{params[:search]}%", category)
@@ -35,8 +35,8 @@ class IndexController < ApplicationController
 
 	def creat
 		@result = ''
-		(1..5).each do |int|
-			company = Company.new(name: "company-#{int}", category: int, subcategory: int+1, city: "Toront-#{int}")
+		(2..10).each do |int|
+			company = Company.new(name: "company-#{int}", category: int, subcategory: int-1, city: "Toront-#{int}")
 			if company.save
 				@result += 'success-'
 			end
