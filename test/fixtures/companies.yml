@@ -4,10 +4,14 @@ one:
   name: Company-one
   category: 1
   subcategory: 1
+  share: 10
+  like: 10
   city: MyCity
 
 two:
   name: Company-two
   category: 2
   subcategory: 2
+  share: 20
+  like: 20
   city: MyCity

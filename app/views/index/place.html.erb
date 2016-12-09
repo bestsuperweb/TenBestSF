@@ -9,13 +9,13 @@
                     <div class="text-container">
                         <h1>
                             <div class="category-title col-xs-12 col-sm-12 col-lg-12">
-                                <span class="number">02 <span class="separator">of <a href="/restaurants/brunch" title="Top Brunch in SF" style="color:#787878; text-decoration: underline;">Best Brunch in SF</a></span></span>
-                                <span class="category-name">The Chicken & The Egg</span>
+                                <span class="number"><%= @no %> <span class="separator">of <a href="/ranking/<%= @company.category %>" title="Top Brunch in SF" style="color:#787878; text-decoration: underline;">Best <%= Category.find(@company.category).name %> in SF</a></span></span>
+                                <span class="category-name"><%= @company.name %></span>
                             </div>
                             <div class="location-wrapper col-xs-12 col-sm-12 col-lg-12">
-                                <span class="location-container"><span class="location-icon"></span> 123 Jones St. Fisherman’s Warf</span>
+                                <span class="location-container"><span class="location-icon"></span> 123 Jones St. Fisherman’s Warf : <%= @company.city %></span>
                                 <div class="share-container col-md-2 hidden-md hidden-lg  no-padding">
-                                    <a href="#"><span class="text">Share</span><span class="icon-share"></span> 1.2m</a>
+                                    <a href="#"><span class="text">Share</span><span class="icon-share"></span> <%= @company.share %> </a>
                                 </div>
                             </div>
                         </h1>
@@ -44,10 +44,10 @@
                     <a href="#">View menu</a>
                 </div>
                 <div class="share-container col-md-2 hidden-xs hidden-sm  no-padding">
-                    <a href="#"><span class="text">Share</span><span class="icon-share"></span> <span class="separator"></span> 1.2m</a>
+                    <a href="#"><span class="text">Share</span><span class="icon-share"></span> <span class="separator"></span> <%= @company.share %> </a>
                 </div>
                 <div class="like-container col-md-2 hidden-xs hidden-sm no-padding">
-                    <a href="#"><span class="text">Like</span><span class="icon-like"></span> <span class="separator"></span> 1.2m</a>
+                    <a href="#"><span class="text">Like</span><span class="icon-like"></span> <span class="separator"></span> <%= @company.like %> </a>
                 </div>
             </div>
         </div>

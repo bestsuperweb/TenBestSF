@@ -26,29 +26,31 @@ class IndexController < ApplicationController
 	end
 
 	def place
-		
+		id = params[:id].nil? ? 1 : params[:id]
+		@no = params[:no].nil? ? 1 : params[:no]
+		@company = Company.find(id)		
 	end
 
 	def ranking
-		
+		category = params[:category].nil? ? 1 : params[:category]
+		@category = Category.find(category)
+		@companies = Company.where("category = ?", category)		
 	end
 
 	def creat
 		@result = ''
-		(2..10).each do |int|
-			company = Company.new(name: "company-#{int}", category: int, subcategory: int-1, city: "Toront-#{int}")
-			if company.save
-				@result += 'success-'
+		category_names = ['Brunch Place', 'Fashion Events', 'Hotel', 'Travel Agency', 'Craft Breweire']
+		(1..5).each do |int|
+			category = Category.new(name: category_names[int-1])
+			category.save
+			(1..5).each do |sint|
+				subcategory = SubCategory.new(name: "#{category_names[int-1]} Sub-#{sint}", category_id: int)
+				subcategory.save
 			end
-			category = Category.new(name: "category-#{int}")
-			if category.save
-				@result += 'success-'
-			end
-			subcategory = SubCategory.new(name: "sub category-#{int}", category_id: int)
-			if subcategory.save
-				@result += 'success/'
-			end
-		end
-	end
-	
+			(1..5).each do |cint|
+				company = Company.new(name: "Friends of Mine#{int}#{cint}", category: int, subcategory: cint, city: "Richmond-#{cint}", share: int*cint, like: (int+1)*10 )
+				company.save
+			end 
+		end		
+	end	
 end

@@ -5,6 +5,8 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.integer :category
       t.integer :subcategory
       t.string :city
+      t.integer :share
+      t.integer :like
 
       t.timestamps
     end

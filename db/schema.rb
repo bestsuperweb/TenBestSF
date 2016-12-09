@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20161208195733) do
     t.integer  "category"
     t.integer  "subcategory"
     t.string   "city"
+    t.integer  "share"
+    t.integer  "like"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
