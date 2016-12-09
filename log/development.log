@@ -38587,3 +38587,130 @@ Processing by IndexController#creat as HTML
 Completed 200 OK in 123ms (Views: 68.8ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/" for ::1 at 2016-12-08 18:53:15 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (21.2ms)
+  Rendered layouts/_header.html.erb (22.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 100ms (Views: 98.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-12-08 18:53:15 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (16.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 118.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=ds&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 18:53:19 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ds", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%ds%')[0m
+  Rendered index/home.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_header.html.erb (16.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 112ms (Views: 108.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=com&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 18:53:23 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"com", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%com%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.2ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_header.html.erb (18.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 111ms (Views: 107.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 18:59:51 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_header.html.erb (15.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 94.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search=c&search_select=&commit=Coming+Soon%21" for ::1 at 2016-12-08 18:59:56 -0500
+Processing by IndexController#home as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"c", "search_select"=>"", "commit"=>"Coming Soon!"}
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (name LIKE '%c%')[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.2ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered index/home.html.erb within layouts/application (35.3ms)
+  Rendered layouts/_header.html.erb (15.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 115ms (Views: 109.7ms | ActiveRecord: 2.1ms)
+
+

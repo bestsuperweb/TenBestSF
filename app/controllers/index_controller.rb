@@ -1,12 +1,12 @@
 class IndexController < ApplicationController
 	def home
 		if params[:search_select].nil? or params[:search_select] == ''
-			category = ''	
+			category = nil	
 		else
 			category = Category.find_by_name(params[:search_select]).id
 		end
 
-		if category == ''
+		if category.nil?
 			if params[:search] == '' or params[:search].nil?
 				@companies = nil
 			else
