@@ -8,8 +8,9 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     @base_title = "10 Best SF"
     @category = Category.new(name: "Example Category")
  	@category.save
-    @company = Company.new(name: "Example Company", category: @category.id, city: "SF" )
-    @company.save
+ 	@company = Company.new(name: "Example Company", category: @category.id, city: "SF" )
+    @company.save    
+    @search_str =  "Exam"  	
   end
 
   test "should get home" do
@@ -28,6 +29,12 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     get place_url(@company.id, 1)
     assert_response :success
     assert_select 'title', "PLACE NAME | Top Brunch in SF | #{@base_title}"
+  end
+
+  test "should get search" do
+  	get search_url, params: { search: @search_str }
+  	assert_response :success
+  	assert_select 'title', "SEARCH | \"#{@search_str}\" | #{@base_title}"
   end
 
   test "should get ranking" do

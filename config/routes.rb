@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'index#contact', as: 'contact'
   get '/place/:id/:no', to: 'index#place', as: 'place'
   get '/ranking/:category', to: 'index#ranking', as: 'ranking'
+  get '/search', to: 'index#search', as: 'search'
   get '/creat', to: 'index#creat'
 
   root 'index#home'
