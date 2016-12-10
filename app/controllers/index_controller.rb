@@ -25,20 +25,23 @@ class IndexController < ApplicationController
 
 	def search
 		if params[:search_select].nil? or params[:search_select] == ''
-			category = nil	
+			@category = nil	
 		else
-			category = Category.find_by_name(params[:search_select]).id
+			@category = params[:search_select]
 		end
 
-		if category.nil?
+		if @category.nil?
 			if params[:search] == '' or params[:search].nil?
 				@companies = nil
 			else
 				@search_str = params[:search]
-				@companies = Company.where("name LIKE ?", "%#{params[:search]}%") 
+				@companies = Company.where("name LIKE ?", "%#{params[:search]}%") if Rails.env.development?
+				@companies = Company.where("name ILIKE ?", "%#{params[:search]}%") if Rails.env.production? 
 			end
 		else
-			@companies = Company.where( "name LIKE ? AND category = ?", "%#{params[:search]}%", category)
+			@search_str = params[:search]
+			@companies = Company.where( "name LIKE ? AND category = ?", "%#{params[:search]}%", @category)if Rails.env.development?
+			@companies = Company.where( "name ILIKE ? AND category = ?", "%#{params[:search]}%", @category)if Rails.env.production?
 		end	
 	end
 

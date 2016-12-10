@@ -1,10 +1,10 @@
-<% provide(:title, "SEARCH | \"#{@search_str}\"") %>
+<% category = Category.find(@category).name unless @category.nil? %>
+<% provide(:title, "SEARCH | \"#{@search_str}\" | #{category}") %>
 <% provide(:body_class, "search-page") %>
 <!-- Search Result Section -->
-     
   <section class="search-result">
     <div class="container">
-    	<h3>Search for "<%= @search_str unless @search_str.nil? %>"</h3>
+    	<h3>Search <%= category unless category.nil? %> <%= "for \"#{@search_str}\"" unless @search_str.nil? or @search_str == '' %> </h3>
 	    <% unless @companies.nil? or @companies.length <= 0 %> 
 	      <table class="table">
 	        <thead>

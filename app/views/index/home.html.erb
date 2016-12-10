@@ -23,7 +23,7 @@
               <select name="search_select" id="search_select">
                 <option></option>
                 <% Category.all.each do |category| %>
-                  <option value="<%= category.name %>"><%= category.name %></option>
+                  <option value="<%= category.id %>"><%= category.name %></option>
                 <% end %>
               </select>
               <%= f.submit 'Coming Soon!', class: "search_button sf" %>

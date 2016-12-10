@@ -32,9 +32,9 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get search" do
-  	get search_url, params: { search: @search_str }
+  	get search_url, params: { search: @search_str, search_select: @category.id }
   	assert_response :success
-  	assert_select 'title', "SEARCH | \"#{@search_str}\" | #{@base_title}"
+  	assert_select 'title', "SEARCH | \"#{@search_str}\" | #{@category.name} | #{@base_title}"
   end
 
   test "should get ranking" do
