@@ -5,7 +5,11 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   def setup
-    @base_title = "10 Best SF"   
+    @base_title = "10 Best SF"
+    @category = Category.new(name: "Example Category")
+ 	@category.save
+    @company = Company.new(name: "Example Company", category: @category.id, city: "SF" )
+    @company.save
   end
 
   test "should get home" do
@@ -21,13 +25,13 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get place" do
-    get place_url
+    get place_url(@company.id, 1)
     assert_response :success
     assert_select 'title', "PLACE NAME | Top Brunch in SF | #{@base_title}"
   end
 
   test "should get ranking" do
-    get ranking_url
+    get ranking_url(@category.id)
     assert_response :success
     assert_select 'title', "Best Brunch in SF | Top Brunch Restaurant SF | #{@base_title}"
   end
