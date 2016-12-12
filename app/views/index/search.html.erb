@@ -1,11 +1,28 @@
 <% category = Category.find(@category).name unless @category.nil? %>
 <% provide(:title, "SEARCH | \"#{@search_str}\" | #{category}") %>
-<% provide(:body_class, "search-page") %>
+<% provide(:body_class, "about-us-page") %>
+<!-- Search caption section -->
+	<section class="info-about-us-section">
+	    <div class="container">
+	        <div class="row">
+	            <div class="logo-container col-md-12"><span class="site-name sf">Search for:</span>
+	            <span class="city-name"><%= @search_str %></span></div>
+	            <div class="col-md-12 info-text-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+	                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+	                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+	                velit esse cillum dolore eu fugiat nulla pariatur.
+	                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                Sed ut perspiciatis unde omnis iste natus.</div>
+	        </div>
+	        <div class="col-md-12 next-button-container">
+	            <a class="next-button" ></a>
+	        </div>
+	    </div>
+	</section>
 <!-- Search Result Section -->
   <section class="search-result">
     <div class="container">
-    	<h3>Search <%= category unless category.nil? %> <%= "for \"#{@search_str}\"" unless @search_str.nil? or @search_str == '' %> </h3>
-	    <% unless @companies.nil? or @companies.length <= 0 %> 
+    	<% unless @companies.nil? or @companies.length <= 0 %> 
 	      <table class="table">
 	        <thead>
 	          <tr>
@@ -24,7 +41,47 @@
 	          <% end %>
 	        </tbody>
 	      </table> 
-      	<% end %>  
+      	<% else %>
+      		No Result...
+      	<% end %>
+
+      	<div class="row">
+    		<div class="col-md-12">
+    			<div class="button-container">
+                    <a href="#">View More Result <span class="arrow">&#8594</span></a>
+                </div>
+    		</div>
+    	</div>  
     </div>
   </section>
    
+<!--Our partners section-->
+<section class="our-partners-section">
+    <div class="container">    	
+        <div class="row">
+            <div class="col-md-12 title-container"><div>our partners</div></div>
+            <ul class="partners-list">
+                <li><%= image_tag 'icons-partner-1.png' %></li>
+                <li><%= image_tag 'icons-partner-2.png' %></li>
+                <li><%= image_tag 'icons-partner-3.png' %></li>
+                <li><%= image_tag 'icons-partner-4.png' %></li>
+                <li><%= image_tag 'icons-partner-5.png' %></li>
+                <li><%= image_tag 'icons-partner-6.png' %></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12 become-partner-container">
+                <div class="text-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                </div>
+                <div class="button-container">
+                    <!-- <a href="#">BECOME A PARTNER <span class="arrow">&#8594</span></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--end of our partners section-->

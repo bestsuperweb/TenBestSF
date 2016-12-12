@@ -17,3 +17,31 @@ a:hover{
 	cursor: pointer;
 	text-decoration: none;
 }
+
+.search-result {
+	margin: 50px 0;
+}
+
+.about-us-page .search-result .button-container a {
+    background-color: #cf0f40;
+    color: white;
+    display: inline-block;
+    font-family: Raleway,sans-serif;
+    font-weight: 700;
+    padding: 18px 35px 18px 45px;
+    text-decoration: none;
+    transition: opacity 0.3s ease 0s;
+}
+
+.about-us-page .search-result .button-container a:hover{
+	opacity: 0.7;
+}
+.about-us-page .search-result .button-container{
+	margin-bottom: 32px;
+    margin-top: 48px;
+    text-align: center;
+}
+
+nav{
+	box-shadow: none !important;
+}
