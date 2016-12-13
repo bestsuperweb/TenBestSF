@@ -21,9 +21,9 @@
 	</section>
 <!-- Search Result Section -->
   <section class="search-result">
-    <div class="container">
+    <div class="container" style="text-align:center;">
     	<% unless @companies.nil? or @companies.length <= 0 %> 
-	      <table class="table">
+	      <!-- <table class="table">
 	        <thead>
 	          <tr>
 	            <th>Name</th>
@@ -39,7 +39,27 @@
 	            <td><%= SubCategory.find(company.subcategory).name unless company.subcategory.nil? %></td>
 	            <td><%= company.city %></td></tr>
 	          <% end %>
-	        </tbody>
+	        </tbody> -->
+	        <% 	n = 0 %>
+	        <div>
+	        <div class="search-result-div" style=" height: <%= search_result_height @companies.length %>px; ">
+	        	<% @companies.each do |company| %>
+	        		<% position = position n %>
+	        		<%= link_to ranking_path(company.category) do %>
+				  		<div class="box" style="top:<%= position[:top] %>px; left: <%= position[:left] %>px;" >
+					  		<div class="img-background">
+					  			<span class="<%= Category.find(company.category).name.downcase %>"></span>
+					  			<span><%= company.name %></span>
+					  			<div class="img-mask">
+					  				<span>Top <%= modal_text company %> <br>in San Francisco</span>
+					  			</div>
+					  		</div>					  					
+				  		</div>
+				  		<% n = n + 1 %>
+			  		<% end %>
+			  	<% end %>
+	        </div>
+	        </div>
 	      </table> 
       	<% else %>
       		No Result...
@@ -48,7 +68,7 @@
       	<div class="row">
     		<div class="col-md-12">
     			<div class="button-container">
-                    <a href="#">View More Result <span class="arrow">&#8594</span></a>
+                    <a href="#">View More Results <span class="arrow">&#8594</span></a>
                 </div>
     		</div>
     	</div>  

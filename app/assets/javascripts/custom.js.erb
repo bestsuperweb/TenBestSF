@@ -157,5 +157,15 @@ $( document ).on('turbolinks:load',function() {
         ]
     });
 
+    $('a div.box').mouseover(function(){
+        index = $("a div.box").index($(this));
+        $('.img-mask').eq(index).show();
+    });
+
+    $('a div.box').mouseout(function(){
+        index = $("a div.box").index($(this));
+        $('.img-mask').eq(index).hide();
+    });
+
       
 });

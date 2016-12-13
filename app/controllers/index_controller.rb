@@ -49,13 +49,13 @@ class IndexController < ApplicationController
 		@result = ''
 		category_names = ['Brunch Place', 'Fashion Events', 'Hotel', 'Travel Agency', 'Craft Breweire']
 		(1..5).each do |int|
-			category = Category.new(name: category_names[int-1])
-			category.save
-			(1..5).each do |sint|
+			# category = Category.new(name: category_names[int-1])
+			# category.save
+			(6..8).each do |sint|
 				subcategory = SubCategory.new(name: "#{category_names[int-1]} Sub-#{sint}", category_id: int)
 				subcategory.save
 			end
-			(1..5).each do |cint|
+			(6..8).each do |cint|
 				company = Company.new(name: "Friends of Mine#{int}#{cint}", category: int, subcategory: cint, city: "Richmond-#{cint}", share: int*cint, like: (int+1)*10 )
 				company.save
 			end 

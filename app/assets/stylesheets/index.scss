@@ -1,3 +1,120 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*search page*/
+.search-result {
+	margin: 50px 0;
+}
+
+.about-us-page .search-result .button-container a {
+    background-color: #cf0f40;
+    color: white;
+    display: inline-block;
+    font-family: Raleway,sans-serif;
+    font-weight: 700;
+    padding: 18px 35px 18px 45px;
+    text-decoration: none;
+    transition: opacity 0.3s ease 0s;
+}
+
+.about-us-page .search-result .button-container a:hover{
+	opacity: 0.7;
+}
+.about-us-page .search-result .button-container{
+	margin-bottom: 32px;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.search-result-div{
+	position: relative;
+	left: 150px;
+}
+@media (max-width: 980px){
+	.search-result-div{
+	 	left: 0px;
+	}
+}
+
+.box{  		
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	position: absolute;
+	background: url(asset_path('polygen.png')) no-repeat center;
+	background-size: 100%;    	
+}
+.img-background{
+	background: url(asset_path('best-of-san-francisco-badge.png')) no-repeat center;
+	background-size: 65%;
+	width: 100%;
+	height: 100%;
+}
+.img-mask{
+	background: url(asset_path('mask.png')) no-repeat center;
+	background-size: 100%; 
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	top: 0;
+}
+.brunch{
+	background: url(asset_path('pasta.png')) no-repeat center;
+	display: block;
+	background-size: 35%;
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0 !important;
+}
+.hotel{
+	background: url(asset_path('hotel.png')) no-repeat center;
+	display: block;
+	background-size: 35%;
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0 !important;
+}
+.travel{
+	background: url(asset_path('travel.png')) no-repeat center;
+	display: block;
+	background-size: 35%;
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0 !important;
+}
+.craft{
+	background: url(asset_path('dish.png')) no-repeat center;
+	display: block;
+	background-size: 35%;
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0 !important;
+}
+.fashion{
+	background: url(asset_path('fashion.png')) no-repeat center;
+	display: block;
+	background-size: 35%;
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0 !important;
+}
+
+.img-background span{
+	top: 67%;
+	position: relative;
+	color: white;
+}
+.img-mask span{
+	top: 37%;
+	position: relative;
+	color: black;
+	font-size: 18px;
+}
