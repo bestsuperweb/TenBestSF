@@ -18,8 +18,10 @@ a:hover{
 	text-decoration: none;
 }
 
-nav{
+nav.navbar-default{
 	box-shadow: none !important;
+	background-image: none !important;
+
 }
 
 
