@@ -7,6 +7,9 @@
 .search-result {
 	margin: 50px 0;
 }
+body{
+		overflow-x: hidden;
+}
 
 .about-us-page .search-result .button-container a {
     background-color: #cf0f40;
@@ -32,11 +35,7 @@
 	position: relative;
 	left: 150px;
 }
-@media (max-width: 980px){
-	.search-result-div{
-	 	left: 0px;
-	}
-}
+
 
 .box{  		
 	width: 200px;
@@ -46,6 +45,8 @@
 	background: url(asset_path('polygen.png')) no-repeat center;
 	background-size: 100%;    	
 }
+
+
 .img-background{
 	background: url(asset_path('best-of-san-francisco-badge.png')) no-repeat center;
 	background-size: 65%;
@@ -118,3 +119,42 @@
 	color: black;
 	font-size: 18px;
 }
+
+
+@media only screen and (max-width: 980px){
+	.search-result-div{
+	 	left: 0px;
+	}
+}
+@media only screen and (max-width: 800px){
+	.search-result-div{
+	 	left: 25%;
+	 	width: 70%;
+	}
+}
+@media only screen and (max-width: 600px){
+	.search-result-div{
+		left: 15%;
+		width: 70%;		
+	}	
+}
+@media only screen and (max-width: 450px){
+	.search-result-div{
+		left: 0;		
+	}	
+}
+@media only screen and (max-width: 360px){
+	.search-result-div{
+		-ms-transform: translate( 0, -300px)scale(0.8); /* IE 9 */
+	    -webkit-transform: translate( 0, -300px)scale(0.8); /* Safari */
+	    transform: translate( 0,-300px)scale(0.8); /* Standard syntax */	    	
+	}	
+}
+@media only screen and (max-width: 320px){
+	.search-result-div{
+		-ms-transform: translate(-10%,-300px)scale(0.8); /* IE 9 */
+	    -webkit-transform: translate(-10%,-300px)scale(0.8); /* Safari */
+	    transform: translate(-10%,-300px)scale(0.8); /* Standard syntax */	    	
+	}
+}
+

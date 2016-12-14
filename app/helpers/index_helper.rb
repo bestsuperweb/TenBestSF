@@ -5,9 +5,9 @@ module IndexHelper
 		return modal_text
 	end
 
-	def position n
+	def position ( n, m )
 		position = {}
-		divmod = n.divmod 4
+		divmod = n.divmod m
 		position[:top] = divmod[1] % 2 != 0 ? divmod[0] * 180  : ( 2 * divmod[0] + 1 ) * 90 
 		position[:left] = divmod[1] * 157
 		return position
