@@ -120,7 +120,7 @@ body{
 	font-size: 18px;
 }
 
-
+/* Responsive Design for Search page */
 @media only screen and (max-width: 980px){
 	.search-result-div{
 	 	left: 0px;
@@ -145,16 +145,16 @@ body{
 }
 @media only screen and (max-width: 360px){
 	.search-result-div{
-		-ms-transform: translate( 0, -300px)scale(0.8); /* IE 9 */
-	    -webkit-transform: translate( 0, -300px)scale(0.8); /* Safari */
-	    transform: translate( 0,-300px)scale(0.8); /* Standard syntax */	    	
+		-ms-transform: translate( 0, -10%)scale(0.8); /* IE 9 */
+	    -webkit-transform: translate( 0, -10%)scale(0.8); /* Safari */
+	    transform: translate( 0,-10%)scale(0.8); /* Standard syntax */	    	
 	}	
 }
 @media only screen and (max-width: 320px){
 	.search-result-div{
-		-ms-transform: translate(-10%,-300px)scale(0.8); /* IE 9 */
-	    -webkit-transform: translate(-10%,-300px)scale(0.8); /* Safari */
-	    transform: translate(-10%,-300px)scale(0.8); /* Standard syntax */	    	
+		-ms-transform: translate(-10%, -10%)scale(0.8); /* IE 9 */
+	    -webkit-transform: translate(-10%,-10%)scale(0.8); /* Safari */
+	    transform: translate(-10%, -10%)scale(0.8); /* Standard syntax */	    	
 	}
 }
 

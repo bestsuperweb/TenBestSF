@@ -22,24 +22,7 @@
 <!-- Search Result Section -->
   <section class="search-result">
     <div class="container" style="text-align:center;">
-    	<% unless @companies.nil? or @companies.length <= 0 %> 
-	      <!-- <table class="table">
-	        <thead>
-	          <tr>
-	            <th>Name</th>
-	            <th>Category</th>
-	            <th>Sub Category</th>
-	            <th>City</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <% @companies.each do |company|%>
-	            <tr><td><%= company.name %></td>
-	            <td><%= Category.find(company.category).name %></td>
-	            <td><%= SubCategory.find(company.subcategory).name unless company.subcategory.nil? %></td>
-	            <td><%= company.city %></td></tr>
-	          <% end %>
-	        </tbody> -->
+    	<% unless @companies.nil? or @companies.length <= 0 %> 	      
 	        <% 	n = 0 %>
 	        <div>
 	        <div class="search-result-div" >
@@ -95,14 +78,15 @@
       	<% else %>
       		No Result...
       	<% end %>
-
-      	<div class="row">
-    		<div class="col-md-12">
-    			<div class="button-container">
-                    <a href="#">View More Results <span class="arrow">&#8594</span></a>
-                </div>
-    		</div>
-    	</div>  
+      	<% if @limit.nil? %>
+	      	<div class="row">
+	    		<div class="col-md-12">
+	    			<div class="button-container">
+	    				<%= link_to 'View More Results <span class="arrow">&#8594</span>'.html_safe, "#{search_url}?search=#{@search_str}&search_select=#{@category}&limit=all" %>                    
+	                </div>
+	    		</div>
+	    	</div>
+    	<% end %>  
     </div>
   </section>
    

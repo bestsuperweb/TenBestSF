@@ -23,7 +23,7 @@ class IndexController < ApplicationController
 		@companies = Company.where("category = ?", category)		
 	end
 
-	def search
+	def search		
 		if params[:search_select].nil? or params[:search_select] == ''
 			@category = nil	
 		else
@@ -42,7 +42,13 @@ class IndexController < ApplicationController
 			@search_str = params[:search]
 			@companies = Company.where( "name LIKE ? AND category = ?", "%#{params[:search]}%", @category)if Rails.env.development?
 			@companies = Company.where( "name ILIKE ? AND category = ?", "%#{params[:search]}%", @category)if Rails.env.production?
-		end	
+		end
+		if params[:limit].nil?
+			if @companies.to_a.length > 8
+				@companies = @companies.to_a.slice(0, 8)
+			end
+		end
+		@limit = params[:limit]
 	end
 
 	def creat
