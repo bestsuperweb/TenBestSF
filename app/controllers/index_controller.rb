@@ -51,6 +51,22 @@ class IndexController < ApplicationController
 		@limit = params[:limit]
 	end
 
+	def share_up
+		unless params[:id].nil?
+			@company = Company.find(params[:id])
+			@share = @company.share + 1
+			@company.update( :share => @share )
+		end
+	end
+
+	def like_up
+		unless params[:id].nil?
+			@company = Company.find(params[:id])
+			@like = @company.like + 1
+			@company.update( :like => @like )
+		end
+	end
+
 	def creat
 		@result = ''
 		category_names = ['Brunch Place', 'Fashion Events', 'Hotel', 'Travel Agency', 'Craft Breweire']

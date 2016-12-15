@@ -43,23 +43,23 @@
                             <div class="social-container">
                                 <div class="share-container">
                                     <div class="share-button">
-                                        <a href="#">
+                                        <%= link_to shareup_path( company.id ), remote: true do %>
                                             <span class="text hidden-xs hidden-sm">Share</span>
                                             <span class="share-icon"></span>
                                             <span class="separator hidden-xs hidden-sm"></span>
-                                            <div class="share-count hidden-xs hidden-sm"><%= company.share %></div>
-                                        </a>
+                                            <div class="share-count hidden-xs hidden-sm" id = "share-text-<%= company.id %>"><%= company.share %></div>
+                                        <% end %>
                                     </div>
 
                                 </div>
                                 <div class="like-container">
                                     <div class="like-button">
-                                        <a href="#">
+                                        <%= link_to likeup_path( company.id ), remote: true do %>
                                             <span class="text hidden-xs hidden-sm">Like</span>
                                             <span class="like-icon"></span>
                                             <span class="separator hidden-xs hidden-sm"></span>
-                                            <div class="like-count hidden-xs hidden-sm"><%= company.like %></div>
-                                        </a>
+                                            <div class="like-count hidden-xs hidden-sm" id = "like-text-<%= company.id %>"><%= company.like %></div>
+                                        <% end %>
                                     </div>
                                 </div>
                             </div>

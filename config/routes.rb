@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/place/:id/:no', to: 'index#place', as: 'place'
   get '/ranking/:category', to: 'index#ranking', as: 'ranking'
   get '/search', to: 'index#search', as: 'search'
+  get '/shareup/:id', to: 'index#share_up', as: 'shareup'
+  get '/likeup/:id', to: 'index#like_up', as: 'likeup'
   get '/creat', to: 'index#creat'
 
   root 'index#home'

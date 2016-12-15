@@ -44,10 +44,16 @@
                     <a href="#">View menu</a>
                 </div>
                 <div class="share-container col-md-2 hidden-xs hidden-sm  no-padding">
-                    <a href="#"><span class="text">Share</span><span class="icon-share"></span> <span class="separator"></span> <%= @company.share %> </a>
+                    <%= link_to shareup_path( @company.id ), remote: true do %>
+                        <span class="text">Share</span><span class="icon-share"></span> <span class="separator"></span>
+                        <span id ="share-text-<%= @company.id %>"><%= @company.share %></span> 
+                    <% end %>
                 </div>
                 <div class="like-container col-md-2 hidden-xs hidden-sm no-padding">
-                    <a href="#"><span class="text">Like</span><span class="icon-like"></span> <span class="separator"></span> <%= @company.like %> </a>
+                    <%= link_to likeup_path( @company.id ), remote: true do %>
+                        <span class="text">Like</span><span class="icon-like"></span> <span class="separator"></span>
+                        <span id ="like-text-<%= @company.id %>"><%= @company.like %></span> 
+                    <% end %>
                 </div>
             </div>
         </div>

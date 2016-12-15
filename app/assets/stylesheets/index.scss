@@ -7,7 +7,7 @@
 .search-result {
 	margin: 50px 0;
 }
-body{
+.about-us-page{
 		overflow-x: hidden;
 }
 
@@ -20,6 +20,9 @@ body{
     padding: 18px 35px 18px 45px;
     text-decoration: none;
     transition: opacity 0.3s ease 0s;
+}
+.about-us-page .qoute-container{
+	line-height: 35px;
 }
 
 .about-us-page .search-result .button-container a:hover{
