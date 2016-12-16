@@ -21,7 +21,7 @@ class IndexController < ApplicationController
 	def ranking
 		category = params[:category].nil? ? 1 : params[:category]
 		@category = Category.find(category)
-		@companies = Company.where("category = ?", category)
+		@companies = Company.where("category = ?", category).order('id ASC')
 		@positions = []
 		@companies.each do |company|
 			@positions << get_info(company)
@@ -100,7 +100,7 @@ class IndexController < ApplicationController
 	def get_info company
 		info = {}
 		begin
-			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyBR5W0NXLtkq2KfxhpOuOh7lQd9h-SaOuA"
+			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyDuZNyp7_5bdF3rbA7mWeKN_EEc1myT2Gk"
 			result = RestClient.get url
 			result_json = JSON.parse result
 		rescue Exception => e
@@ -119,7 +119,7 @@ class IndexController < ApplicationController
 				info['lng'] = result_json['results'].first['geometry']['location']['lng']
 				info['address'] = result_json['results'].first['formatted_address']
 				photo_reference = result_json['results'].first['photos'].first['photo_reference']
-				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyBR5W0NXLtkq2KfxhpOuOh7lQd9h-SaOuA"
+				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyDuZNyp7_5bdF3rbA7mWeKN_EEc1myT2Gk"
 			end				
 		end
 		return info		

@@ -22,19 +22,18 @@
 
 <!--Start of places list section-->
 <section class="places-list-section">
-<% no = 0 %>
-<% @companies.each do |company| %>
+<% @companies.each_with_index do |company, index| %>
     <!--Start of place cont-->
     <div class="container-fluid no-padding">
         <div class="place-container container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 image-container no-padding hidden-sm hidden-xs">
-                        <%= link_to image_tag( "images-places-#{no+1}.png", class: 'img-responsive' ), place_path( company.id, no + 1 ) %>
+                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( company.id, index + 1 ) %>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 info-container">
                         <div class="header-section">
-                            <div class="number-container"><%=no+1 %></div>
+                            <div class="number-container"><%= index+1 %></div>
                             <div class="separator"></div>
                             <div class="name-container">
                                 <div class="title-container"><%= set_title company.name %></div>
@@ -65,11 +64,11 @@
                             </div>
                         </div>
                         <div class="image-for-mobile hidden-lg hidden-md">
-                            <%= image_tag "images-places-#{no+1}.png", class: 'img-responsive' %>
+                            <%= image_tag "images-places-#{index+1}.png", class: 'img-responsive' %>
                         </div>
                         <div class="main-text-container">
                             <p>
-                              <strong><%= no+1 %> of 10 Best Brunch Places in SF</strong> - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                              <strong><%= index+1 %> of 10 Best Brunch Places in SF</strong> - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                               do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                               dolor in reprehenderit in voluptate velit.
@@ -84,7 +83,6 @@
                 </div>
             </div>
         </div>
-        <% no = no+1 %>  
     </div>
     <!--end of place container-->                          
 <% end %>    
