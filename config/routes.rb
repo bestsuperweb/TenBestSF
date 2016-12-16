@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/likeup/:id', to: 'index#like_up', as: 'likeup'
   get '/creat', to: 'index#creat'
 
+  resources :companies
+
   root 'index#home'
 
 end

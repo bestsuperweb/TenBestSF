@@ -1,0 +1,19 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<div>
+	No: <%= @company.id %>
+</div>
+<div>
+	Name: <%= @company.name %>
+</div>
+<div>
+	City: <%= @company.city %>
+</div>
+<div>
+	Category: <%= @company.category %>
+</div>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+</div>

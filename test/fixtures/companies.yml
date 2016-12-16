@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Company-one
+  name: Company1
   category: 1
   subcategory: 1
+  city: MyCity1
   share: 10
   like: 10
-  city: MyCity
+  
 
 two:
-  name: Company-two
+  name: Company2
   category: 2
   subcategory: 2
+  city: MyCity2
   share: 20
   like: 20
-  city: MyCity
+  

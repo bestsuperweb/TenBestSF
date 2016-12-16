@@ -1,0 +1,37 @@
+
+<%= form_for(company, class: 'form-horizontal') do |f| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Name:</label>
+    <div class="col-sm-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">City:</label>
+    <div class="col-sm-10">
+      <%= f.text_field :city, :class => 'form-control' %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Category:</label>
+    <div class="col-sm-10 ">
+     <%= f.select :category, options_for_select( Category.all.map {|category| [ category.name, category.id ]} ), :class => 'form-control' %>
+    </div>
+  </div><br><br>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Submit", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

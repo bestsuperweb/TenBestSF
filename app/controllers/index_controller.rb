@@ -14,13 +14,18 @@ class IndexController < ApplicationController
 	def place
 		id = params[:id].nil? ? 1 : params[:id]
 		@no = params[:no].nil? ? 1 : params[:no]
-		@company = Company.find(id)		
+		@company = Company.find(id)
+		@position =  get_info @company						
 	end
 
 	def ranking
 		category = params[:category].nil? ? 1 : params[:category]
 		@category = Category.find(category)
-		@companies = Company.where("category = ?", category)		
+		@companies = Company.where("category = ?", category)
+		@positions = []
+		@companies.each do |company|
+			@positions << get_info(company)
+		end		
 	end
 
 	def search		
@@ -54,7 +59,11 @@ class IndexController < ApplicationController
 	def share_up
 		unless params[:id].nil?
 			@company = Company.find(params[:id])
-			@share = @company.share + 1
+			if @company.share.nil?
+				@share = 1 
+			else
+				@share = @company.share + 1 
+			end			
 			@company.update( :share => @share )
 		end
 	end
@@ -62,7 +71,11 @@ class IndexController < ApplicationController
 	def like_up
 		unless params[:id].nil?
 			@company = Company.find(params[:id])
-			@like = @company.like + 1
+			if @company.like.nil?
+				@like = 1 
+			else
+				@like = @company.like + 1 
+			end
 			@company.update( :like => @like )
 		end
 	end
@@ -71,16 +84,45 @@ class IndexController < ApplicationController
 		@result = ''
 		category_names = ['Brunch Place', 'Fashion Events', 'Hotel', 'Travel Agency', 'Craft Breweire']
 		(1..5).each do |int|
-			# category = Category.new(name: category_names[int-1])
-			# category.save
+			category = Category.new(name: category_names[int-1])
+			category.save
 			(6..8).each do |sint|
-				subcategory = SubCategory.new(name: "#{category_names[int-1]} Sub-#{sint}", category_id: int)
-				subcategory.save
-			end
-			(6..8).each do |cint|
-				company = Company.new(name: "Friends of Mine#{int}#{cint}", category: int, subcategory: cint, city: "Richmond-#{cint}", share: int*cint, like: (int+1)*10 )
-				company.save
-			end 
+				subcategory = SubCategory.new(name: "Sub #{category_names[int-1]} #{sint}", category_id: int)
+				if subcategory.save
+					@result = 'Success!'
+				end
+			end			
 		end		
-	end	
+	end
+
+	private
+
+	def get_info company
+		info = {}
+		begin
+			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyBR5W0NXLtkq2KfxhpOuOh7lQd9h-SaOuA"
+			result = RestClient.get url
+			result_json = JSON.parse result
+		rescue Exception => e
+			info['lat'] = 37.5556023
+			info['lng'] = -77.4627319
+			info['img'] = 'place-image.png'
+			info['address'] = '1234 Street, Richmond'
+		else
+			if result_json['results'].first.nil?
+				info['lat'] = 37.5556023
+				info['lng'] = -77.4627319
+				info['img'] = 'place-image.png'
+				info['address'] = '1234 Street, Richmond'
+			else
+				info['lat'] = result_json['results'].first['geometry']['location']['lat']
+				info['lng'] = result_json['results'].first['geometry']['location']['lng']
+				info['address'] = result_json['results'].first['formatted_address']
+				photo_reference = result_json['results'].first['photos'].first['photo_reference']
+				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyBR5W0NXLtkq2KfxhpOuOh7lQd9h-SaOuA"
+			end				
+		end
+		return info		
+	end
+
 end

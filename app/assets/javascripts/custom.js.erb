@@ -100,25 +100,6 @@ $( document ).on('turbolinks:load',function() {
             }, 1000);
     });
 
-    function initialize() {
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
-            center: new google.maps.LatLng(37.5556023, -77.4627319),
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-        var icon = "<%= asset_path('icon-google-map.png') %>";
-        var pointMarker = new google.maps.Marker({
-            position: new google.maps.LatLng(37.5556023, -77.4627319),
-            map: map,
-            icon: icon,
-            title: "places"
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-
     //init slider slick on place
     $('.b_slider').slick({
         dots: false,

@@ -1,7 +1,8 @@
 module IndexHelper
+	
 	def modal_text company
 		modal_text = Category.find(company.category).name unless company.category.nil?
-		# modal_text = SubCategory.find(company.subcategory).name unless company.subcategory.nil?
+		modal_text = SubCategory.find(company.subcategory).name unless company.subcategory.nil?
 		return modal_text
 	end
 
@@ -17,4 +18,14 @@ module IndexHelper
 		height = ( ( @companies.length/4 ).ceil + 1 ) * 180
 		return height
 	end
+
+	def set_title title
+		if title.length > 17
+			new_title = title[0..14] + '...' 
+		else
+			new_title = title 
+		end		
+		return new_title
+	end
+
 end
