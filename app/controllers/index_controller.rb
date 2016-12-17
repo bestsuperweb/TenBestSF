@@ -100,7 +100,7 @@ class IndexController < ApplicationController
 	def get_info company
 		info = {}
 		begin
-			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyDuZNyp7_5bdF3rbA7mWeKN_EEc1myT2Gk"
+			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyATURkst6qutoXt_3stX18GMEYoH103bUI"
 			result = RestClient.get url
 			result_json = JSON.parse result
 		rescue Exception => e
@@ -109,7 +109,7 @@ class IndexController < ApplicationController
 			info['img'] = 'place-image.png'
 			info['address'] = '1234 Street, Richmond'
 		else
-			if result_json['results'].first.nil?
+			if result_json['results'].nil? or result_json['results'].first.nil?
 				info['lat'] = 37.5556023
 				info['lng'] = -77.4627319
 				info['img'] = 'place-image.png'
@@ -119,7 +119,7 @@ class IndexController < ApplicationController
 				info['lng'] = result_json['results'].first['geometry']['location']['lng']
 				info['address'] = result_json['results'].first['formatted_address']
 				photo_reference = result_json['results'].first['photos'].first['photo_reference']
-				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyDuZNyp7_5bdF3rbA7mWeKN_EEc1myT2Gk"
+				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyATURkst6qutoXt_3stX18GMEYoH103bUI"
 			end				
 		end
 		return info		
