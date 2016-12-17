@@ -50,7 +50,7 @@
 				  		<div class="box" id = "box-<%= n %>" >
 					  		<div class="img-background">
 					  			<span class="<%= Category.find(company.category).name.downcase %>"></span>
-					  			<span><%= company.name %></span>
+					  			<span><%= set_title(company.name) %></span>
 					  			<div class="img-mask">
 					  				<span>Top <%= modal_text company %> <br>in San Francisco</span>
 					  			</div>
