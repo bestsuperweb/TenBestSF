@@ -1,4 +1,4 @@
-<% provide(:title, "Best Brunch in SF | Top Brunch Restaurant SF") %>
+<% provide(:title, "Top #{@category.name} in SF") %>
 <% provide(:body_class, "ranking-page") %>
 <!--Start of Banner section-->
 <section class="main-banner-section">
@@ -12,7 +12,7 @@
                         <span class="separator">|</span>
                         <span class="date-container "> <%= DateTime.now.strftime "%B %Y" %></span>
                     </div>
-                    <h1 class="places-container col-xs-12 col-sm-12 col-lg-12">10 Best <%= @category.name %>s in SF</h1>
+                    <h1 class="places-container col-xs-12 col-sm-12 col-lg-12">10 Best <%= @category.name %> in SF</h1>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 image-container no-padding hidden-sm hidden-xs">
-                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( company.id, index + 1 ) %>
+                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( Category.find(company.category).name, company.name ) %>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 info-container">
                         <div class="header-section">
@@ -120,6 +120,7 @@
   </div>
 <% end %>
 <script type="text/javascript">
+$( document ).on('turbolinks:load',function() {
   function initialize() {
         
         var places = new Array();
@@ -140,9 +141,7 @@
             navigationControl: false,
             mapTypeControl: false,
             scaleControl: false,
-            draggable: true,
-
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            draggable: true
         });
 
         var infoboxes = new Array();
@@ -200,7 +199,9 @@
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
+  });
 </script>
 <!--end of google map section-->
+
 
 

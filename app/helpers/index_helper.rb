@@ -9,13 +9,13 @@ module IndexHelper
 	def position ( n, m )
 		position = {}
 		divmod = n.divmod m
-		position[:top] = divmod[1] % 2 != 0 ? divmod[0] * 180  : ( 2 * divmod[0] + 1 ) * 90 
-		position[:left] = divmod[1] * 157
+		position[:top] = divmod[1] % 2 != 0 ? divmod[0] * 270  : ( 2 * divmod[0] + 1 ) * 135 
+		position[:left] = divmod[1] * 235.5
 		return position
 	end
 
 	def search_result_height length
-		height = ( ( @companies.length/4 ).ceil + 1 ) * 180
+		height = ( ( @companies.length/4 ).ceil + 1 ) * 270
 		return height
 	end
 

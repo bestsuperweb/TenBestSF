@@ -10,11 +10,13 @@
     <meta name="description" content="10 Best SF is the premier city guide for those looking to explore San Francisco and the Greater Bay Area. We seek out the top bars, restaurants, events & more...">
 
     <%= favicon_link_tag 'favicon.ico' %>
+    <% if yield(:body_class) == 'place-page' or yield(:body_class) == 'ranking-page' %>
+      <!--google map-->
+      <script src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>
+    <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--google map-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR5W0NXLtkq2KfxhpOuOh7lQd9h-SaOuA"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,7 +60,9 @@
                   <li class="page-link"><%= link_to 'Contact', contact_path %></li>
                 </ul>
                 <div class="search-field-wrapper hidden">
-                  <input class="search-field-input" type="text" placeholder="Filter">
+                <%= form_for(:search_form, url:search_path, :method => 'get') do |f| %>
+                  <input class="search-field-input" name="search" type="text" placeholder="Filter">
+                <% end %>
                 </div>
                 <div class="menu-button sf">
                   <a class="menu-link" ><span class="menu-button-text">Menu</span> <span class="hambuger-icon glyphicon glyphicon-menu-hamburger sf"></span></a>

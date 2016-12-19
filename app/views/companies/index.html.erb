@@ -1,16 +1,18 @@
+<% provide(:title, "Best Companies") %>
+<% provide(:body_class, "company-page") %>
 
 <div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Companies</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>no</th>
-      <th>name</th>
-      <th>city</th>
-      <th>category</th>
+      <th>No</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Category</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +24,9 @@
         <td><%= company.name %></td>
         <td><%= company.city %></td>
         <td><%= company.category %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-ok"></span>'.html_safe, company %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_company_path(company) %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,6 +3,7 @@ require 'test_helper'
 class CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @company = companies(:one)
+    @base_title = "10 Best SF"    
   end
 
   test "should get index" do
@@ -25,11 +26,13 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
   test "should show company" do
     get company_url(@company)
     assert_response :success
+    assert_select 'title', "#{@company.name} | #{@base_title}"
   end
 
   test "should get edit" do
     get edit_company_url(@company)
     assert_response :success
+    assert_select 'title', "Edit #{@company.name} | #{@base_title}"
   end
 
   test "should update company" do

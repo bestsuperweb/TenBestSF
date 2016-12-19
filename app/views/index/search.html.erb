@@ -23,53 +23,61 @@
   <section class="search-result">
     <div class="container" style="text-align:center;">
     	<% unless @companies.nil? or @companies.length <= 0 %> 	      
-	        <% 	n = 0 %>
 	        <div>
 	        <div class="search-result-div" >
 	        <style type="text/css">
 	        	.search-result-div{
 	        		height: <%= search_result_height @companies.length %>px;
 	        	}
-	        	@media only screen and (max-width: 800px){
+	        	@media only screen and (max-width: 980px){
 	        		.search-result-div{
 	        			height: <%= (search_result_height @companies.length ) * 2 - 270 %>px;
 	        		}	        		
 	        	}
-	        	@media only screen and (max-width: 360px){
+	        	@media only screen and (max-width: 600px){
 	        		.search-result-div{
 	        			height: <%= ( (search_result_height @companies.length ) * 2 - 270 ) * 0.8 %>px;
 	        		}	        		
 	        	}
+	        	@media only screen and (max-width: 450px){
+	        		.search-result-div{
+	        			height: <%= ( (search_result_height @companies.length ) * 2 - 270 ) * 0.6 %>px;
+	        		}	        		
+	        	}
+	        	@media only screen and (max-width: 320px){
+	        		.search-result-div{
+	        			height: <%= ( (search_result_height @companies.length ) * 2 - 270 ) * 0.5 %>px;
+	        		}	        		
+	        	}
 	        </style>
-	        	<% @companies.each do |company| %>
+	        	<% @companies.each_with_index do | company, index | %>
 	        		<% 
-	        			position = position( n, 4 )
-	        			res_position = position(n, 2)
+	        			position = position( index, 4 )
+	        			res_position = position( index, 2)
 	        		%>
-	        		<%= link_to ranking_path(company.category) do %>
-				  		<div class="box" id = "box-<%= n %>" >
+	        		<%= link_to ranking_path( Category.find(company.category).name ) do %>
+				  		<div class="box" id = "box-<%= index %>" >
 					  		<div class="img-background">
 					  			<span class="<%= Category.find(company.category).name.downcase %>"></span>
-					  			<span><%= set_title(company.name) %></span>
+					  			<span><%= set_title company.name %></span>
 					  			<div class="img-mask">
 					  				<span>Top <%= modal_text company %> <br>in San Francisco</span>
 					  			</div>
 					  		</div>					  					
 				  		</div>
 				  		<style type="text/css">
-				  			#box-<%= n %>{
+				  			#box-<%= index %>{
 				  				top:<%= position[:top] %>px;
 				  				left: <%= position[:left] %>px;
 				  			}
 
-				  			@media only screen and (max-width: 800px) {
-				  				#box-<%= n %>{
+				  			@media only screen and (max-width: 980px) {
+				  				#box-<%= index %>{
 					  				top:<%= res_position[:top] %>px;
 					  				left: <%= res_position[:left] %>px;
 					  			}
 				  			}
 				  		</style>
-				  		<% n = n + 1 %>
 			  		<% end %>
 			  	<% end %>
 	        </div>

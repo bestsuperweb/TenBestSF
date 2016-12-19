@@ -12,14 +12,13 @@ class IndexController < ApplicationController
 	end
 
 	def place
-		id = params[:id].nil? ? 1 : params[:id]
-		@no = params[:no].nil? ? 1 : params[:no]
-		@company = Company.find(id)
+		@no = params[:company].nil? ? 1 : Company.find_by_name(params[:company]).id
+		@company = Company.find(@no)
 		@position =  get_info @company						
 	end
 
 	def ranking
-		category = params[:category].nil? ? 1 : params[:category]
+		category = params[:category].nil? ? 1 : Category.find_by_name(params[:category]).id
 		@category = Category.find(category)
 		@companies = Company.where("category = ?", category).order('id ASC')
 		@positions = []
@@ -82,7 +81,7 @@ class IndexController < ApplicationController
 
 	def creat
 		@result = ''
-		category_names = ['Brunch Place', 'Fashion Events', 'Hotel', 'Travel Agency', 'Craft Breweire']
+		category_names = ['Brunch Place', 'Fashion Event', 'Hotel', 'Travel Agency', 'Craft Brewery']
 		(1..5).each do |int|
 			category = Category.new(name: category_names[int-1])
 			category.save
@@ -100,26 +99,30 @@ class IndexController < ApplicationController
 	def get_info company
 		info = {}
 		begin
-			url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{company.name}+#{company.city}&key=AIzaSyD_mMKLGBULdpg7KvEFfdoHQpdbu83EG-Q"
+			url = "#{Rails.application.secrets[:google_place_url]}query=#{company.name}+#{company.city}&key=#{Rails.application.secrets[:google_place_key]}"
 			result = RestClient.get url
 			result_json = JSON.parse result
 		rescue Exception => e
-			info['lat'] = 37.5556023
-			info['lng'] = -77.4627319
+			info['lat'] = 37.779044
+			info['lng'] = -122.418757
 			info['img'] = 'place-image.png'
-			info['address'] = '1234 Street, Richmond'
+			info['address'] = '1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102'
 		else
 			if result_json['results'].nil? or result_json['results'].first.nil?
-				info['lat'] = 37.5556023
-				info['lng'] = -77.4627319
+				info['lat'] = 37.779044
+				info['lng'] = -122.418757
 				info['img'] = 'place-image.png'
-				info['address'] = '1234 Street, Richmond'
+				info['address'] = '1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102'
 			else
 				info['lat'] = result_json['results'].first['geometry']['location']['lat']
 				info['lng'] = result_json['results'].first['geometry']['location']['lng']
 				info['address'] = result_json['results'].first['formatted_address']
-				photo_reference = result_json['results'].first['photos'].first['photo_reference']
-				info['img'] = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=#{photo_reference}&key=AIzaSyD_mMKLGBULdpg7KvEFfdoHQpdbu83EG-Q"
+				if result_json['results'].first['photos'].nil?
+					info['img'] = 'place-image.png'
+				else
+					photo_reference = result_json['results'].first['photos'].first['photo_reference']
+					info['img'] = "#{Rails.application.secrets[:google_photo_url]}maxheight=400&photoreference=#{photo_reference}&key=#{Rails.application.secrets[:google_photo_key]}"
+				end
 			end				
 		end
 		return info		
