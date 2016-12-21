@@ -36,6 +36,7 @@ class CompaniesController < ApplicationController
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
+    get_info @company
   end
 
   # PATCH/PUT /companies/1
@@ -50,6 +51,7 @@ class CompaniesController < ApplicationController
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
+    get_info @company
   end
 
   # DELETE /companies/1

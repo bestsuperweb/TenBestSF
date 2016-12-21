@@ -94,38 +94,4 @@ class IndexController < ApplicationController
 		end		
 	end
 
-	private
-
-	def get_info company
-		info = {}
-		begin
-			url = "#{Rails.application.secrets[:google_place_url]}query=#{company.name}+#{company.city}&key=#{Rails.application.secrets[:google_place_key]}"
-			result = RestClient.get url
-			result_json = JSON.parse result
-		rescue Exception => e
-			info['lat'] = 37.779044
-			info['lng'] = -122.418757
-			info['img'] = 'place-image.png'
-			info['address'] = '1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102'
-		else
-			if result_json['results'].nil? or result_json['results'].first.nil?
-				info['lat'] = 37.779044
-				info['lng'] = -122.418757
-				info['img'] = 'place-image.png'
-				info['address'] = '1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102'
-			else
-				info['lat'] = result_json['results'].first['geometry']['location']['lat']
-				info['lng'] = result_json['results'].first['geometry']['location']['lng']
-				info['address'] = result_json['results'].first['formatted_address']
-				if result_json['results'].first['photos'].nil?
-					info['img'] = 'place-image.png'
-				else
-					photo_reference = result_json['results'].first['photos'].first['photo_reference']
-					info['img'] = "#{Rails.application.secrets[:google_photo_url]}maxheight=400&photoreference=#{photo_reference}&key=#{Rails.application.secrets[:google_photo_key]}"
-				end
-			end				
-		end
-		return info		
-	end
-
 end

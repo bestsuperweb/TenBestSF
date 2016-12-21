@@ -92,8 +92,7 @@
                     <div id="map"></div>
                 </div>
                 <script type="text/javascript">
-                $( document ).on('turbolinks:load',function() {
-                    function initialize() {
+                  function initialize() {
                         var mapCanvas = document.getElementById('map');
                         var mapOptions = {
                             center: new google.maps.LatLng(<%= @position['lat'] %>, <%= @position['lng'] %>),
@@ -104,13 +103,13 @@
                         var pointMarker = new google.maps.Marker({
                             position: new google.maps.LatLng(<%= @position['lat'] %>, <%= @position['lng'] %>),
                             map: map,
-                            icon: icon,
-                            title: "places"
+                            icon: icon
                         });
                     }
-                    google.maps.event.addDomListener(window, 'load', initialize);
-                });
+                    // google.maps.event.addDomListener(window, 'load', initialize);
                 </script>
+                <script async defer src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>&callback=initialize" type="text/javascript"></script>
+                <!-- <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>  -->
             </div>
         </div>
     </div>

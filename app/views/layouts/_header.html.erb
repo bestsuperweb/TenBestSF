@@ -10,11 +10,6 @@
     <meta name="description" content="10 Best SF is the premier city guide for those looking to explore San Francisco and the Greater Bay Area. We seek out the top bars, restaurants, events & more...">
 
     <%= favicon_link_tag 'favicon.ico' %>
-    <% if yield(:body_class) == 'place-page' or yield(:body_class) == 'ranking-page' %>
-      <!--google map-->
-      <script src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>"></script>
-      <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>
-    <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
