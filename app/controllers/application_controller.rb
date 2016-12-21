@@ -42,4 +42,10 @@ class ApplicationController < ActionController::Base
 
 		return info		
 	end
+
+	def get_ip
+		request.remote_ip
+		remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
+		return remote_ip
+	end
 end

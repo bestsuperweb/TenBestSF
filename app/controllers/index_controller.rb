@@ -14,7 +14,7 @@ class IndexController < ApplicationController
 	def place
 		@no = params[:company].nil? ? 1 : Company.find_by_name(params[:company]).id
 		@company = Company.find(@no)
-		@position =  get_info @company						
+		@position =  get_info @company					
 	end
 
 	def ranking
@@ -24,9 +24,7 @@ class IndexController < ApplicationController
 		@positions = []
 		@companies.each do |company|
 			@positions << get_info(company)
-		end
-		request.remote_ip
-		@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]	
+		end			
 	end
 
 	def search		
@@ -58,26 +56,34 @@ class IndexController < ApplicationController
 	end
 
 	def share_up
-		unless params[:id].nil?
-			@company = Company.find(params[:id])
-			if @company.share.nil?
+		company = Company.find(params[:id]) unless params[:id].nil?
+		if Ip.find_by_address(get_ip).nil?			
+			if company.share.nil?
 				@share = 1 
 			else
-				@share = @company.share + 1 
+				@share = company.share + 1 
 			end			
-			@company.update( :share => @share )
+			company.update( :share => @share )			
+			ip = Ip.new(:address => get_ip)
+			ip.save
+		else
+			@share = company.share
 		end
 	end
 
 	def like_up
-		unless params[:id].nil?
-			@company = Company.find(params[:id])
-			if @company.like.nil?
+		company = Company.find(params[:id]) unless params[:id].nil?
+		if Ip.find_by_address(get_ip).nil?			
+			if company.like.nil?
 				@like = 1 
 			else
-				@like = @company.like + 1 
-			end
-			@company.update( :like => @like )
+				@like = company.like + 1 
+			end			
+			company.update( :like => @like )			
+			ip = Ip.new(:address => get_ip)
+			ip.save
+		else
+			@like = company.like
 		end
 	end
 
