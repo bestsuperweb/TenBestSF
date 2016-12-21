@@ -24,7 +24,9 @@ class IndexController < ApplicationController
 		@positions = []
 		@companies.each do |company|
 			@positions << get_info(company)
-		end		
+		end
+		request.remote_ip
+		@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]	
 	end
 
 	def search		
