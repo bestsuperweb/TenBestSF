@@ -56,47 +56,47 @@ class IndexController < ApplicationController
 	end
 
 	def share_up
-		company = Company.find(params[:id]) unless params[:id].nil?
-		ip = Ip.where( "address = ? AND company = ?", get_ip, params[:id] )
+		@company = Company.find(params[:id]) unless params[:id].nil?
+		ip = Ip.where( "address = ? AND company_id = ?", get_ip, params[:id] ).first
 		if ip.nil? 		
-			if company.share.nil?
+			if @company.share.nil?
 				@share = 1 
 			else
-				@share = company.share + 1 
+				@share = @company.share + 1 
 			end			
-			company.update( :share => @share )			
+			@company.update( :share => @share )			
 			ip = Ip.new(:address => get_ip, :company_id => params[:id], :share => 1 )
 			ip.save
 		else
 			if ip.share.nil?
-				@share = company.share + 1
-				company.update( :share => @share )				
+				@share = @company.share + 1
+				@company.update( :share => @share )				
 				ip.update( :share => 1)
 			else
-				@share = company.share
+				@share = @company.share
 			end
 		end
 	end
 
 	def like_up
-		company = Company.find(params[:id]) unless params[:id].nil?
-		ip = Ip.where( "address = ? AND company = ?", get_ip, params[:id] )
+		@company = Company.find(params[:id]) unless params[:id].nil?
+		ip = Ip.where( "address = ? AND company_id = ?", get_ip, params[:id] ).first
 		if ip.nil?			
-			if company.like.nil?
+			if @company.like.nil?
 				@like = 1 
 			else
-				@like = company.like + 1 
+				@like = @company.like + 1 
 			end			
-			company.update( :like => @like )			
+			@company.update( :like => @like )			
 			ip = Ip.new(:address => get_ip, :company_id => params[:id], :like => 1 )
 			ip.save
 		else
 			if ip.like.nil?
-				@like = company.like + 1
-				company.update( :like => @like )
+				@like = @company.like + 1
+				@company.update( :like => @like )
 				ip.update( :like => 1)
 			else
-				@like = company.like
+				@like = @company.like
 			end
 			
 		end
