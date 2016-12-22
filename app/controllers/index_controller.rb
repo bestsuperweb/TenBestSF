@@ -12,13 +12,13 @@ class IndexController < ApplicationController
 	end
 
 	def place
-		@no = params[:company].nil? ? 1 : Company.find_by_name(params[:company]).id
+		@no = params[:company].nil? ? 1 : Company.find_by_name( url_decode(params[:company]) ).id
 		@company = Company.find(@no)
 		@position =  get_info @company					
 	end
 
 	def ranking
-		category = params[:category].nil? ? 1 : Category.find_by_name(params[:category]).id
+		category = params[:category].nil? ? 1 : Category.find_by_name( url_decode( params[:category] ) ).id
 		@category = Category.find(category)
 		@companies = Company.where("category = ?", category).order('id ASC')
 		@positions = []

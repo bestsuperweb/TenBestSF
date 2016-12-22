@@ -28,4 +28,10 @@ module IndexHelper
 		return new_title
 	end
 
+	def url_code url
+		code_url = url.gsub(/\s+/, "-")
+		code_url = code_url.downcase!
+		return code_url		
+	end
+
 end

@@ -9,7 +9,7 @@
                     <div class="text-container">
                         <h1>
                             <div class="category-title col-xs-12 col-sm-12 col-lg-12">
-                                <span class="number"><%= @no %> <span class="separator">of <a href="/Top <%= Category.find(@company.category).name %>/" title="Top Brunch in SF" style="color:#787878; text-decoration: underline;">Best <%= Category.find(@company.category).name %> in SF</a></span></span>
+                                <span class="number"><%= @no %> <span class="separator">of <a href="/top-<%= url_code( Category.find(@company.category).name ) %>/" title="Top Brunch in SF" style="color:#787878; text-decoration: underline;">Best <%= Category.find(@company.category).name %> in SF</a></span></span>
                                 <span class="category-name"><%= @company.name %></span>
                             </div>
                             <div class="location-wrapper col-xs-12 col-sm-12 col-lg-12">

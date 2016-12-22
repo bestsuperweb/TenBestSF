@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 image-container no-padding hidden-sm hidden-xs">
-                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( Category.find(company.category).name, company.name ) %>
+                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( url_code(Category.find(company.category).name), url_code( company.name ) ) %>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 info-container">
                         <div class="header-section">

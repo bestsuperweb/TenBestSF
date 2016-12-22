@@ -55,7 +55,7 @@
 	        			position = position( index, 4 )
 	        			res_position = position( index, 2)
 	        		%>
-	        		<%= link_to ranking_path( Category.find(company.category).name ) do %>
+	        		<%= link_to ranking_path( url_code( Category.find(company.category).name ) ) do %>
 				  		<div class="box" id = "box-<%= index %>" >
 					  		<div class="img-background">
 					  			<span class="<%= Category.find(company.category).name.downcase %>"></span>

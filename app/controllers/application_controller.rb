@@ -48,4 +48,10 @@ class ApplicationController < ActionController::Base
 		remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
 		return remote_ip
 	end
+
+	def url_decode url
+		decode_url = url.gsub("-", " ")
+		decode_url = decode_url.split.map(&:capitalize).join(' ')
+		return decode_url		
+	end
 end
