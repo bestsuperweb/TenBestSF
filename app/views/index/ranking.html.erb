@@ -96,15 +96,15 @@
 </section>
 <% @positions.each_with_index do |position, index| %>
   <div class="infobox-wrapper">
-      <div id="infobox-<%= index %>">
+      <div id="infobox-<%= index %>" class="infoBox">
           <div class="google-map-arrow"></div>
           <%= image_tag 'place-google-map.png', class: "col-md-4 col-xs-4 no-padding" %>
               <div class="header-container col-md-8">
                  <div class="title-container">
-                     <span class="title-text"><%= @companies[index].name %></span>
+                     <span class="title-text"><span style="color:#CF0F40; font-weight:bolder; font-size: 30px;"><%= index %> </span> <%= @companies[index].name %></span>
                      <div class="location-container"><span class="location-icon"></span><%= position['address'] %></div>
                  </div>
-                 <div class="directions-container"><a href="#">DIRECTIONS</a></div>
+                 <!-- <div class="directions-container"><a href="#">DIRECTIONS</a></div> -->
                  <div class="footer-section">
                      <div class="buttons-container">
                          <a class="world-map" href="#"></a>
@@ -140,65 +140,30 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP            
         });
 
-        // var infoboxes = new Array();
-        // for ( var i = 0; i < places.length; i++ ){
-        //     id = "infobox-" + i;
-        //     infoboxes[i] = new InfoBox({
-        //                           content: document.getElementById(id),
-        //                           disableAutoPan: false,
-        //                           maxWidth: 150,
-        //                           pixelOffset: new google.maps.Size(40, -80),
-        //                           zIndex: null,
-        //                           boxStyle: {
-        //                               opacity: 1,
-        //                               width: "500px"
-        //                           },
-        //                           closeBoxMargin: "12px 4px 2px 2px",
-        //                           closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-        //                           infoBoxClearance: new google.maps.Size(1, 1)
-        //                       });
-        // }
-
-        //create number of markers based on places.length
-        function setPoint() {
-            for (var i = 0; i < places.length; i++) {
-                pointMarkerImage[i] = new google.maps.MarkerImage('<%= asset_path("icon-google-map.png") %>');
-                pointMarker[i] = new google.maps.Marker({
-                    position: places[i],
-                    map: map,
-                    icon: pointMarkerImage[i]
-                });
-
-                // google.maps.event.addListener(pointMarker[i], 'click', function () {
-                //     infoboxes[i].open(map, this);
-                // });
-
-                // (function (i) {
-                //     google.maps.event.addListener(pointMarker[i], 'click', function () {
-                //         for (var j = 0; j < pointMarker.length; j++) {
-                //             pointMarker[j].setIcon(icon);
-                //         }
-                //         this.setIcon(iconHover);
-                //     });
-
-                //     google.maps.event.addListener(infoboxes[i], 'closeclick', function () {
-                //         for (var j = 0; j < pointMarker.length; j++) {
-                //             pointMarker[j].setIcon(icon);
-                //         }
-                //     });
-
-                // })(i);
-            }
+        var infoboxes = new Array();
+        for ( var i = 0; i < places.length; i++ ){
+            id = "infobox-" + i;
+            infoboxes[i] = new google.maps.InfoWindow({
+                                content: document.getElementById(id)
+                              });
+            pointMarkerImage[i] = new google.maps.MarkerImage('<%= asset_path("icon-google-map.png") %>');
+            pointMarker[i] = new google.maps.Marker({
+                position: places[i],
+                map: map,
+                icon: pointMarkerImage[i]
+            });
+            pointMarker[i].addListener('click', function(i) {
+                                          return function() {
+                                                      infoboxes[i].open(map, pointMarker[i]);
+                                                  }
+                                                }(i));
         }
-        setPoint();
+
     }
-
-    // google.maps.event.addDomListener(window, 'load', initialize);
-
 
 </script>
 
-<script async defer src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>&callback=initialize" type="text/javascript"></script>
+<script src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>&callback=initialize" type="text/javascript"></script>
 <!-- <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox.js"></script>  -->
 <!--end of google map section-->
 
