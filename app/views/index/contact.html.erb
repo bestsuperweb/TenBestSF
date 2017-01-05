@@ -1,8 +1,78 @@
-<% provide(:title, "Contact") %>
-<% provide(:body_class, " ") %>
+<% provide(:title, "CONTACT") %>
+<% provide(:body_class, "about-us-page") %>
 
 <section>
 	<div class="container">
-		Contact Page...		
+		<div class="contact-us">
+			<h1>Contact Us</h1>
+			<%= image_tag 'inbox.png', class: 'inbox-img' %>
+			<p>Thank you for contacting 10 Best Design. For submission to our directory, plesae submit your site on the approciate U.S. stae's page in our Web Development Directory. For other inquires, questions, or comments, plesase use the from below.</p>
+			<a class="contact-arrow btn btn-primary" > Contact Form </a>
+		</div>		
 	</div>
 </section>
+<section>
+	<div id="contact-map">		
+	</div>
+	<script type="text/javascript">
+                  function initialize() {
+                        var mapCanvas = document.getElementById('contact-map');
+                        var mapOptions = {
+                            center: new google.maps.LatLng(37.801599, -122.405323),
+                            zoom: 18
+                        };
+                        var map = new google.maps.Map(mapCanvas, mapOptions);
+                        var icon = "<%= asset_path('icon-google-map.png') %>";
+                        var pointMarker = new google.maps.Marker({
+                            position: new google.maps.LatLng(37.801599, -122.405323),
+                            map: map,
+                            icon: icon
+                        });
+                    }
+                    // google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+                <script async defer src="<%= Rails.application.secrets[:google_map_url] %>key=<%= Rails.application.secrets[:google_map_key] %>&callback=initialize" type="text/javascript"></script>
+</section>
+<section>
+	<div class="container contact-form">
+		<div>
+			<h1>Send an Email</h1>
+			<%= form_for contact_path do |f| %>
+				<%= f.text_field :email, class: 'form-control', placeholder: 'Your Emial' %>
+				<%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
+				<%= f.text_area :message, class: 'form-control', placeholder: 'Your Message', rows: 10 %>
+				<%= f.button '<span class="glyphicon glyphicon-envelope"></span>'.html_safe, class: 'btn btn-primary btn-block' %>
+			<% end %>
+		</div>
+	</div>	
+</section>
+<!--Our partners section-->
+<section class="our-partners-section">
+    <div class="container">    	
+        <div class="row">
+            <div class="col-md-12 title-container"><div>our partners</div></div>
+            <ul class="partners-list">
+                <li><%= image_tag 'icons-partner-1.png' %></li>
+                <li><%= image_tag 'icons-partner-2.png' %></li>
+                <li><%= image_tag 'icons-partner-3.png' %></li>
+                <li><%= image_tag 'icons-partner-4.png' %></li>
+                <li><%= image_tag 'icons-partner-5.png' %></li>
+                <li><%= image_tag 'icons-partner-6.png' %></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12 become-partner-container">
+                <div class="text-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                </div>
+                <div class="button-container">
+                    <a href="#">BECOME A PARTNER <span class="arrow">&#8594</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--end of our partners section-->

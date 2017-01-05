@@ -24,5 +24,67 @@ nav.navbar-default{
 
 }
 
+.contact-us{
+	text-align: center;
+	padding: 30px 0;
+	margin: 30px 0;
+	background: #eceeef;
+	border-radius: 5px;
+}
+.contact-us *{
+	margin: 15px; 
+}
+.contact-us h1{
+	font-size: 35px;
+	font-weight: normal;
+}
+.contact-us p{
+	color: gray;
+	font-size: 18px;
+	font-weight: 200;
+}
+.contact-arrow{
+	background: #0275d8;
+}
+.contact-arrow:hover{
+	opacity: .75;
+	background: #0275d8;
+}
+#contact-map{
+	height: 500px;
+	margin-bottom: 20px;
+}
+.contact-form{
+	width: 40%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contact-form h1{
+	font-size: 30px;
+	font-weight: 200;
+}
+.contact-form *{
+	margin: 20px;
+}
+.contact-form input{
+	height: 40px;
+}
+.contact-form button{
+	height: 50px;
+}
+.contact-form button span{
+	margin: 0;
+	width: 20px;
+}
+@media only screen and (max-width: 980px){
+	.contact-form{
+		width: 60%;		
+	}
+}
 
+@media only screen and (max-width: 700px){
+	.contact-form{
+		width: 100%;		
+	}
+}
 
