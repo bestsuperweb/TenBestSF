@@ -42,4 +42,11 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', "Top #{@category.name} in SF | #{@base_title}"
   end
+
+  test "should get contact" do
+    get contact_url
+    assert_response :success
+    assert_select 'title', "CONTACT | #{@base_title}"
+  end
+
 end
