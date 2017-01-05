@@ -43,6 +43,10 @@ $( document ).on('turbolinks:load',function() {
         })
         .resize();
 
+    // 
+
+    // 
+
     //Clicking for menu
     $(".navbar .menu-button .menu-link").on('click', function() {
         if ( $(this).hasClass('pressed') ){
@@ -134,7 +138,7 @@ $( document ).on('turbolinks:load',function() {
             // instead of a settings object
         ]
     });
-
+    // Search block start---
     $('a div.box').mouseover(function(){
         index = $("a div.box").index($(this));
         $('.img-mask').eq(index).show();
@@ -143,6 +147,32 @@ $( document ).on('turbolinks:load',function() {
     $('a div.box').mouseout(function(){
         index = $("a div.box").index($(this));
         $('.img-mask').eq(index).hide();
-    });    
+    });
+    // -- Search block end
+    $('a.contact-arrow').click(function(){
+        $('html, body').animate({
+            scrollTop: 1000
+        }, 600);
+    });
+
+    $(window).on("scroll", function() {
+            var fromTop = $(window).scrollTop();
+            var alert = "<div class='alert'><div class='alert-content'><b><span class='glyphicon glyphicon-map-marker'></span> Theory Cube</b><br><i>AKA 10 Best SF</i><br>50 Francisco St # 118<br>San Francisco, CA 94133<br>Email:<br>SF@10bestnetwork.com</div></div>";
+            if ( fromTop > 300 ){
+                if (!$('div.alert').length){
+                    $('#contact-map').append(alert);
+                    $("div.alert").animate({
+                                    height: '100%'
+                                }, 200);
+                    $("div.alert-content").animate({'margin-top': '200px'}, 200).animate({'margin-top': '100px'}, 200).animate({'margin-top': '150px'}, 200);
+                    $("div.alert").on("click", function(){
+                        // $(this).slideUp(1000);
+                        $(this).fadeOut(1000);
+                    });
+                }
+            }
+    });
+
+    
       
 });
