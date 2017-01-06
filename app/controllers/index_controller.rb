@@ -8,7 +8,14 @@ class IndexController < ApplicationController
 	end
 
 	def contact
-
+		unless params[:contact].nil?			
+			@user = params[:contact]
+			if ContactMailer.welcome_email(@user).deliver_now
+				@result = "Success!"
+			else
+				@result = "Failure!"
+			end
+		end
 	end
 
 	def place

@@ -113,4 +113,11 @@ nav.navbar-default{
 		margin: 20px 0;
 	}
 }
-
+#email-alert{
+	display: none;
+	background: rgba(200, 0, 0, .6);
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+    width: 100%;
+}	

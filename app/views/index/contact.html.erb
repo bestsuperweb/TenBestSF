@@ -42,7 +42,8 @@
 	<div class="container contact-form">
 		<div>
 			<h1>Send an Email</h1>
-			<%= form_for( contact_path, method: 'get' ) do |f| %>
+			<%= form_for( :contact, method: 'get', remote: true ) do |f| %>
+				<div id = "email-alert"></div>			
 				<%= f.email_field :email, class: 'form-control', placeholder: 'Your Email' %>
 				<%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
 				<%= f.text_area :message, class: 'form-control', placeholder: 'Your Message', rows: 10 %>
