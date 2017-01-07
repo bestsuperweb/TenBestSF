@@ -58,9 +58,9 @@ Rails.application.configure do
   #   location: '/usr/sbin/sendmail',
   #   arguments: '-i'
   # }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'SF@10bestnetwork.com'}
+  # config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.default_options = {from: 'SF@10bestnetwork.com'}
   
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
@@ -93,4 +93,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.smtp_settings = {
+     address:              'smtp.gmail.com',
+     port:                 587,
+     domain:               'Gmail.com',
+     user_name:            Rails.application.secrets[:mailer_user],
+     password:             Rails.application.secrets[:mailer_pass],
+     authentication:       'plain',
+     enable_starttls_auto: true  
+  }
 end
