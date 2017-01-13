@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
+ 
 a:hover{
 	cursor: pointer;
 	text-decoration: none;
@@ -120,4 +122,46 @@ nav.navbar-default{
     padding: 10px;
     color: white;
     width: 100%;
-}	
+}
+.social-modal{
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(10, 10, 10, .9);
+	z-index: 200;
+	position: fixed;
+	top: 0;
+	padding-top: 10%;
+	text-align: center;
+	color: white;	
+	overflow: scroll;	
+}
+.social-modal span{
+	font-size: 30px;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	-webkit-transition: ease all 1s; /* Safari */
+    transition: ease all 1s;
+}
+.social-modal span:hover{
+	cursor: pointer;
+    -ms-transform: scale(1.3)rotate(360deg); /* IE 9 */
+    -webkit-transform: scale(1.3)rotate(360deg); /* Safari */
+    transform: scale(1.3)rotate(360deg); 
+}
+.social-modal h1{
+	font-size: 60px;
+	font-weight: 300;
+	border-bottom: 1px solid white;
+	padding-bottom: 10px;
+}
+.social-modal .container{
+	display: none;
+}
+@media screen and (max-width: 360px){
+     .social-modal h1{
+     	font-size: 40px;
+     }
+}
+

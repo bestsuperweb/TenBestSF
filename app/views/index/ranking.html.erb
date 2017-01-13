@@ -23,13 +23,20 @@
 <!--Start of places list section-->
 <section class="places-list-section">
 <% @companies.each_with_index do |company, index| %>
+  <div class="social-modal">
+    <div class="container">
+      <h1>Share</h1>
+      <%= social_share_button_tag(company.name, :image => asset_path("images-places-#{index+1}.png")) %>
+      <span class="glyphicon glyphicon-remove-circle"></span>
+    </div>                          
+  </div>
     <!--Start of place cont-->
     <div class="container-fluid no-padding">
         <div class="place-container container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 image-container no-padding hidden-sm hidden-xs">
-                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( url_code(Category.find(company.category).name), url_code( company.name ) ) %>
+                        <%= link_to image_tag( "images-places-#{index+1}.png", class: 'img-responsive' ), place_path( url_code(Category.find(company.category).name), url_code( company.name ) ) %>                        
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 info-container">
                         <div class="header-section">
@@ -45,8 +52,8 @@
                                         <%= link_to shareup_path( company.id ), remote: true do %>
                                             <span class="text hidden-xs hidden-sm">Share</span>
                                             <span class="share-icon"></span>
-                                            <span class="separator hidden-xs hidden-sm"></span>
-                                            <div class="share-count hidden-xs hidden-sm" id = "share-text-<%= company.id %>"><%= company.share %></div>
+                                            <span class="separator "></span>
+                                            <div class="share-count " id = "share-text-<%= company.id %>"><%= company.share %></div>
                                         <% end %>
                                     </div>
 
@@ -56,8 +63,8 @@
                                         <%= link_to likeup_path( company.id ), remote: true do %>
                                             <span class="text hidden-xs hidden-sm">Like</span>
                                             <span class="like-icon"></span>
-                                            <span class="separator hidden-xs hidden-sm"></span>
-                                            <div class="like-count hidden-xs hidden-sm" id = "like-text-<%= company.id %>"><%= company.like %></div>
+                                            <span class="separator "></span>
+                                            <div class="like-count " id = "like-text-<%= company.id %>"><%= company.like %></div>
                                         <% end %>
                                     </div>
                                 </div>

@@ -44,9 +44,9 @@
 			<h1>Send an Email</h1>
 			<%= form_for( :contact, method: 'get', remote: true ) do |f| %>
 				<div id = "email-alert"></div>			
-				<%= f.email_field :email, class: 'form-control', placeholder: 'Your Email' %>
-				<%= f.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
-				<%= f.text_area :message, class: 'form-control', placeholder: 'Your Message', rows: 10 %>
+				<%= f.email_field :email, class: 'form-control', placeholder: 'Your Email', required: true %>
+				<%= f.text_field :name, class: 'form-control', placeholder: 'Your Name', required: true %>
+				<%= f.text_area :message, class: 'form-control', placeholder: 'Your Message', rows: 10, required: true %>
 				<%= f.button '<span class="glyphicon glyphicon-envelope"></span>'.html_safe, class: 'btn btn-primary btn-block' %>
 			<% end %>
 		</div>

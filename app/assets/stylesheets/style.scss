@@ -2834,8 +2834,30 @@ footer {
   }
 }
 
+$size: 60px;
+$smallsize: 40px;
 
-
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size !important;
+    height: $size !important;
+    width: $size !important;
+    margin: 20px;
+    -webkit-transition: ease all 1s; /* Safari */
+    transition: ease all 1s;
+    @media screen and (max-width: 360px){
+      background-size: $smallsize $smallsize !important;
+      height: $smallsize !important;
+      width: $smallsize !important;
+      margin: 10px;
+    }
+    &:hover{
+        -ms-transform: scale(1.3); /* IE 9 */
+        -webkit-transform: scale(1.3); /* Safari */
+        transform: scale(1.3); 
+    };
+  }
+}
 
 //Mobile styles
 @import "mobile";

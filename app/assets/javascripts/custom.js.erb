@@ -40,8 +40,7 @@ $( document ).on('turbolinks:load',function() {
                 $(".menu-tab .list").removeClass("collapse");
 
             }
-        })
-        .resize();
+        }).resize();
     ////
 
     //Clicking for menu
@@ -168,5 +167,16 @@ $( document ).on('turbolinks:load',function() {
                     });
                 }
             }
-    });      
+    });
+
+    $('.share-button').on('click', function(){
+        index = $('.share-button').index($(this));
+        $('.social-modal').eq(index).show();
+        $('.social-modal .container').eq(index).fadeIn(2000);        
+    });
+
+    $('.social-modal span').on('click', function(){
+        //index = $('.share-button span').index($(this));
+        $('.social-modal').fadeOut(1000);
+    });   
 });

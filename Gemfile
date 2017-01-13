@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rest-client'
 gem 'json'
+gem 'social-share-button'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

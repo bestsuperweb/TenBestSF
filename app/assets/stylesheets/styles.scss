@@ -2284,6 +2284,8 @@ footer {
 @media (min-width: 992px) and (max-width: 1199px) {
   .header .navbar .menu-container .menu-header {
     position: relative; }
+  .navbar .menu-container .menu-tabs-section .menu-tab .menu-listings-section {
+    display: none; }
   .header .navbar .menu-container .menu-tabs-section .menu-listings-section {
     position: absolute;
     height: 322px;
@@ -2429,7 +2431,7 @@ footer {
 
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a {
-    width: 55px; }
+    width: 95px; }
 
   .ranking-page .image-for-mobile img {
     width: 100%; }
@@ -2794,7 +2796,7 @@ footer {
 
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a {
-    width: 55px; }
+    width: 95px; }
 
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a .share-icon,
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a .like-icon {
@@ -2864,7 +2866,7 @@ footer {
 
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .share-container .share-button a,
   .ranking-page .places-list-section .place-container .info-container .header-section .social-container .like-container .like-button a {
-    width: 55px; }
+    width: 95px; }
 
   .ranking-page .image-for-mobile img {
     width: 100%; }
