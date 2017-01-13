@@ -315,7 +315,7 @@
         float: left;
         max-width: 202px;
         width: 100%;
-        border-left: 1px solid #1f2a33;
+        /*border-left: 1px solid #1f2a33;*/
         padding-top: 20px;
         padding-left: 22px;
         text-align: left; }
@@ -2286,6 +2286,16 @@ footer {
     position: relative; }
   .navbar .menu-container .menu-tabs-section .menu-tab .menu-listings-section {
     display: none; }
+  .navbar .menu-container .menu-tabs-section .menu-tab.active .menu-listings-section {
+    position: absolute;
+    height: 322px;
+    z-index: 99999;
+    box-sizing: content-box;
+    left: 0px;
+    margin: 0 auto;
+    top: 72px;
+    display: block; }
+
   .header .navbar .menu-container .menu-tabs-section .menu-listings-section {
     position: absolute;
     height: 322px;
@@ -2331,6 +2341,19 @@ footer {
     left: 0px;
     margin: 0 auto;
     top: 72px; }
+
+  .navbar .menu-container .menu-tabs-section .menu-tab .menu-listings-section {
+    display: none; }
+  .navbar .menu-container .menu-tabs-section .menu-tab.active .menu-listings-section {
+    position: absolute;
+    height: 322px;
+    z-index: 99999;
+    box-sizing: content-box;
+    left: 0px;
+    margin: 0 auto;
+    top: 72px;
+    display: block; }
+    
   .header .navbar .pages-section {
     padding-left: 0px; }
   .header .navbar .menu-list-wrapper .container {
