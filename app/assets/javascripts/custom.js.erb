@@ -175,6 +175,11 @@ $( document ).on('turbolinks:load',function() {
         $('.social-modal .container').eq(index).fadeIn(2000);        
     });
 
+    $('.places-buttons-section .share-container').on('click', function(){
+        $('.social-modal').show();
+        $('.social-modal .container').fadeIn(2000);        
+    });
+
     $('.social-modal span').on('click', function(){
         //index = $('.share-button span').index($(this));
         $('.social-modal').fadeOut(1000);

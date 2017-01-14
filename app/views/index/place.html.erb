@@ -26,6 +26,13 @@
     </div>
 </section>
 <!--end of banner section-->
+<div class="social-modal">
+    <div class="container">
+      <h1>Share</h1>
+      <%= social_share_button_tag(@company.name, :image => asset_path(@position['img'])) %>
+      <span class="glyphicon glyphicon-remove-circle"></span>
+    </div>
+</div> 
 <!--Start of buttons section-->
 <section class="places-buttons-section">
     <div class="container">
