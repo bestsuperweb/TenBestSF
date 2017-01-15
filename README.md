@@ -26,7 +26,7 @@ Things you may want to cover:
 										  google_photo_key: xxxxxxx-xxxx
 										  </p>
 	* Social share button configuration: <p>config/initializer/social_share_button.rb<br>
-										    config.allow_sites = %w(xxx xxxxx xxxxx)
+										    config.allow_sites = %w(xxx xxxxx xxxxx)<br>
 										    ex: facebook, twitter...
 										  </p>
 
