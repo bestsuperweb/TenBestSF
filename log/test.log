@@ -20183,3 +20183,378 @@ Processing by IndexController#about as HTML
   Rendered layouts/_footer.html.erb (0.4ms)
 Completed 200 OK in 46ms (Views: 23.5ms | ActiveRecord: 0.0ms)
   [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (32.3ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString1', '2017-01-15 14:17:38.119099', '2017-01-15 14:17:38.119099', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at", "id") VALUES ('MyString2', '2017-01-15 14:17:38.119099', '2017-01-15 14:17:38.119099', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "companies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "share", "like", "created_at", "updated_at", "id") VALUES ('Company1', 1, 1, 'MyCity1', 10, 10, '2017-01-15 14:17:38.176642', '2017-01-15 14:17:38.176642', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "share", "like", "created_at", "updated_at", "id") VALUES ('Company2', 2, 2, 'MyCity2', 20, 20, '2017-01-15 14:17:38.176642', '2017-01-15 14:17:38.176642', 298486374)[0m
+  [1m[36mFixture Delete (21.2ms)[0m  [1m[31mDELETE FROM "ips"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "ips" ("address", "created_at", "updated_at", "id") VALUES ('MyString', '2017-01-15 14:17:38.179867', '2017-01-15 14:17:38.179867', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "ips" ("address", "created_at", "updated_at", "id") VALUES ('MyString', '2017-01-15 14:17:38.179867', '2017-01-15 14:17:38.179867', 298486374)[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "sub_categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2017-01-15 14:17:38.202781', '2017-01-15 14:17:38.202781', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "created_at", "updated_at", "id", "category_id") VALUES ('MyText', '2017-01-15 14:17:38.202781', '2017-01-15 14:17:38.202781', 298486374, 298486374)[0m
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+CategoryTest: test_associated_sub_categories_should_be_destroyed
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:38 UTC], ["updated_at", 2017-01-15 14:17:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example Sub Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "sub_categories" ("name", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Example Sub Category"], ["category_id", 980190963], ["created_at", 2017-01-15 14:17:38 UTC], ["updated_at", 2017-01-15 14:17:38 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "sub_categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSubCategory Load (0.1ms)[0m  [1m[34mSELECT "sub_categories".* FROM "sub_categories" WHERE "sub_categories"."category_id" = ?[0m  [["category_id", 980190963]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "sub_categories" WHERE "sub_categories"."id" = ?[0m  [["id", 980190963]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 980190963]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "sub_categories"[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+CategoryTest: test_should_be_valid
+----------------------------------
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+CategoryTest: test_name_should_be_present
+-----------------------------------------
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CategoryTest: test_name_should_be_unique
+----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:38 UTC], ["updated_at", 2017-01-15 14:17:38 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35m (15.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_city_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+CompanyTest: test_name_should_be_present
+----------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompanyTest: test_category_should_be_present
+--------------------------------------------
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+CompanyTest: test_name_should_be_unique
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "subcategory", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 1], ["subcategory", 2], ["city", "Toronto"], ["created_at", 2017-01-15 14:17:38 UTC], ["updated_at", 2017-01-15 14:17:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (31.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CompanyTest: test_should_be_valid
+---------------------------------
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+SubCategoryTest: test_category_id_should_be_present
+---------------------------------------------------
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+SubCategoryTest: test_should_be_valid
+-------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "Example SubCategory"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+SubCategoryTest: test_name_should_be_present
+--------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mSubCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sub_categories" WHERE "sub_categories"."name" = ? LIMIT ?[0m  [["name", "     "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+CompaniesControllerTest: test_should_show_company
+-------------------------------------------------
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/admin/companies/980190962" for 127.0.0.1 at 2017-01-15 09:17:38 -0500
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (29.7ms)
+  Rendered layouts/_header.html.erb (12391.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 12530ms (Views: 12499.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+CompaniesControllerTest: test_should_get_edit
+---------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/admin/companies/980190962/edit" for 127.0.0.1 at 2017-01-15 09:17:51 -0500
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering companies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered companies/_form.html.erb (64.9ms)
+  Rendered companies/edit.html.erb within layouts/application (105.1ms)
+  Rendered layouts/_header.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 209ms (Views: 182.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+CompaniesControllerTest: test_should_destroy_company
+----------------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+Started DELETE "/admin/companies/980190962" for 127.0.0.1 at 2017-01-15 09:17:51 -0500
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/companies
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CompaniesControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/admin/companies/new" for 127.0.0.1 at 2017-01-15 09:17:51 -0500
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered companies/_form.html.erb (2.6ms)
+  Rendered companies/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+CompaniesControllerTest: test_should_update_company
+---------------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/admin/companies/980190962" for 127.0.0.1 at 2017-01-15 09:17:51 -0500
+Processing by CompaniesController#update as HTML
+  Parameters: {"company"=>{"name"=>"Company1", "city"=>"MyCity1", "category"=>"1"}, "id"=>"980190962"}
+  [1m[36mCompany Load (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? AND ("companies"."id" != ?) LIMIT ?[0m  [["name", "Company1"], ["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/companies/980190962
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? AND ("companies"."id" != ?) LIMIT ?[0m  [["name", "Company1"], ["id", 980190962], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "companies" SET "updated_at" = ?, "lat" = ?, "lng" = ?, "photo" = ?, "address" = ? WHERE "companies"."id" = ?[0m  [["updated_at", 2017-01-15 14:17:54 UTC], ["lat", 37.779044], ["lng", -122.418757], ["photo", "place-image.png"], ["address", "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102"], ["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 302 Found in 2399ms (ActiveRecord: 0.7ms)
+  [1m[35m (18.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+CompaniesControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/admin/companies" for 127.0.0.1 at 2017-01-15 09:17:54 -0500
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+CompaniesControllerTest: test_should_create_company
+---------------------------------------------------
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+Started POST "/admin/companies" for 127.0.0.1 at 2017-01-15 09:17:54 -0500
+Processing by CompaniesController#create as HTML
+  Parameters: {"company"=>{"name"=>"ExampleCompany", "city"=>"Mycity", "category"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "ExampleCompany"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ExampleCompany"], ["category", 1], ["city", "Mycity"], ["created_at", 2017-01-15 14:17:54 UTC], ["updated_at", 2017-01-15 14:17:54 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/companies/980190963
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? AND ("companies"."id" != ?) LIMIT ?[0m  [["name", "ExampleCompany"], ["id", 980190963], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "companies" SET "updated_at" = ?, "lat" = ?, "lng" = ?, "photo" = ?, "address" = ? WHERE "companies"."id" = ?[0m  [["updated_at", 2017-01-15 14:17:55 UTC], ["lat", 37.779044], ["lng", -122.418757], ["photo", "place-image.png"], ["address", "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102"], ["id", 980190963]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 302 Found in 1304ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "companies"[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" ORDER BY "companies"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+IndexControllerTest: test_should_get_about
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/about" for 127.0.0.1 at 2017-01-15 09:17:55 -0500
+Processing by IndexController#about as HTML
+  Rendering index/about.html.erb within layouts/application
+  Rendered index/about.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 29ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+IndexControllerTest: test_should_get_contact
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/contact" for 127.0.0.1 at 2017-01-15 09:17:55 -0500
+Processing by IndexController#contact as HTML
+  Rendering index/contact.html.erb within layouts/application
+  Rendered index/contact.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+IndexControllerTest: test_should_get_search
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/search?search=Exam&search_select=980190963" for 127.0.0.1 at 2017-01-15 09:17:55 -0500
+Processing by IndexController#search as HTML
+  Parameters: {"search"=>"Exam", "search_select"=>"980190963"}
+  Rendering index/search.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  Rendered index/search.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 47ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+IndexControllerTest: test_should_get_place
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:55 UTC], ["updated_at", 2017-01-15 14:17:55 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/top-Example%20Category/Example%20Company" for 127.0.0.1 at 2017-01-15 09:17:55 -0500
+Processing by IndexController#place as HTML
+  Parameters: {"category"=>"Example Category", "company"=>"Example Company"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? AND ("companies"."id" != ?) LIMIT ?[0m  [["name", "Example Company"], ["id", 980190963], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "companies" SET "lat" = ?, "lng" = ?, "photo" = ?, "address" = ?, "updated_at" = ? WHERE "companies"."id" = ?[0m  [["lat", 37.78996999999999], ["lng", -122.400872], ["photo", "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=CoQBdwAAALmnX-9F0WelYjwblJMK01WL65Y0evBEc8BHBkodbeHv1zbK5e2RewHyZuJRIeTitPYA9fegKO1Xf37FLricRI_cF3jkve7t-esNZ-p-QS-VyMWXY4OwKV324hMXjYcwbPY1dHO_LsLZBGZCmLGnN6WWM0cYXfz9BNgHURsNKWqaEhA-HeXZHwTyuP8tWDc0aImmGhSuRtuWvKtUJsdTacz7KpMYnXHehQ&key=AIzaSyD_mMKLGBULdpg7KvEFfdoHQpdbu83EG-Q"], ["address", "548 Market St, San Francisco, CA 94104, United States"], ["updated_at", 2017-01-15 14:17:57 UTC], ["id", 980190963]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering index/place.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  Rendered index/place.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1641ms (Views: 18.6ms | ActiveRecord: 0.7ms)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[35m (57.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+IndexControllerTest: test_should_get_ranking
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:57 UTC], ["updated_at", 2017-01-15 14:17:57 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:57 UTC], ["updated_at", 2017-01-15 14:17:57 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/top-Example%20Category" for 127.0.0.1 at 2017-01-15 09:17:57 -0500
+Processing by IndexController#ranking as HTML
+  Parameters: {"category"=>"Example Category"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE (category = 980190963) ORDER BY id ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? AND ("companies"."id" != ?) LIMIT ?[0m  [["name", "Example Company"], ["id", 980190963], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "companies" SET "lat" = ?, "lng" = ?, "photo" = ?, "address" = ?, "updated_at" = ? WHERE "companies"."id" = ?[0m  [["lat", 37.78996999999999], ["lng", -122.400872], ["photo", "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=CoQBdwAAAJlCjgOZfbEp209vLtmRAfJcLqYZwTjTSe_GtnZpoCbb9dUGa8c1vkMMsjI3d9lxLv9E3erIT87QcaeSJqm0OQ9NDUYy-uUuSHFwVMA0-tgQxqv-3YX3fjSkfd9pH1QbZppB8sBzh7nKRzubILwV5dbiueAbcMD1UGVbxRX8zcyiEhCGEckiIR100m0eco-1a6gxGhSsNdQtrf-pkl319sPSqSdzI_NJfQ&key=AIzaSyD_mMKLGBULdpg7KvEFfdoHQpdbu83EG-Q"], ["address", "548 Market St, San Francisco, CA 94104, United States"], ["updated_at", 2017-01-15 14:17:59 UTC], ["id", 980190963]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering index/ranking.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  Rendered index/ranking.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1901ms (Views: 16.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (2.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+IndexControllerTest: test_should_get_home
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Example Category"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Example Category"], ["created_at", 2017-01-15 14:17:59 UTC], ["updated_at", 2017-01-15 14:17:59 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCompany Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Example Company"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "category", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Example Company"], ["category", 980190963], ["city", "SF"], ["created_at", 2017-01-15 14:17:59 UTC], ["updated_at", 2017-01-15 14:17:59 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/home" for 127.0.0.1 at 2017-01-15 09:17:59 -0500
+Processing by IndexController#home as HTML
+  Rendering index/home.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered index/home.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
