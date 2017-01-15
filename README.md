@@ -37,15 +37,15 @@ Things you may want to cover:
 * How to run the test suite<br>
 	* Test app: <p>>> rails test<br>
 				Running via Spring preloader in process 35879<br>
-				Started with run options --seed 30263<br><br>
+				Started with run options --seed 30263<br>
 
-				logo/16: [=====================             ] 64% Time: 00:00:13,  ETA: 00:00:08<br>
-				logo/18: [========================          ] 72% Time: 00:00:16,  ETA: 00:00:06<br>
-				logo/22: [=============================     ] 88% Time: 00:00:17,  ETA: 00:00:03<br>
-				logo/23: [===============================   ] 92% Time: 00:00:19,  ETA: 00:00:02<br>
-				  25/25: [=================================] 100% Time: 00:00:21, Time: 00:00:21<br><br>
+				logo/16: [=====================             ] 64% Time: 00:00:13,  ETA: 00:00:08
+				logo/18: [========================          ] 72% Time: 00:00:16,  ETA: 00:00:06
+				logo/22: [=============================     ] 88% Time: 00:00:17,  ETA: 00:00:03
+				logo/23: [===============================   ] 92% Time: 00:00:19,  ETA: 00:00:02
+				  25/25: [=================================] 100% Time: 00:00:21, Time: 00:00:21
 
-				Finished in 21.60776s<br>
+				Finished in 21.60776s
 				25 tests, 35 assertions, 0 failures, 0 errors, 0 skips
 				</p>
 	* IndexController: <p>>> rails test test/controllers/index_controller_test.rb<br>
