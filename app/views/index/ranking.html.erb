@@ -82,7 +82,7 @@
                             </p>
                         </div>
                         <div class="buttons-container">
-                            <div class="learn-more-button"><a href="#">LEARN MORE</a></div>
+                            <div class="learn-more-button"><%= link_to "LEARN MORE", place_path( url_code(Category.find(company.category).name), url_code( company.name ) ) %></div>
                             <div class="go-to-website-button"><a href="#">GO TO WEBSITE</a></div>
                         </div>
 
@@ -144,6 +144,7 @@
             zoom: 14,
             center: places[0],
             panControl: false,
+            scrollwheel: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP            
         });
 

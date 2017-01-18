@@ -15,7 +15,9 @@ module IndexHelper
 	end
 
 	def search_result_height length
-		height = ( ( @companies.length/4 ).ceil + 1 ) * 270
+		divmod = length.divmod 4
+		height = ( divmod[0] + 1 ) * 270 if divmod[1] == 0
+		height = ( divmod[0] + 2 ) * 270 unless divmod[1] == 0
 		return height
 	end
 
