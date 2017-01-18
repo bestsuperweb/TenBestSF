@@ -108,20 +108,6 @@ class IndexController < ApplicationController
 			
 		end
 	end
-
-	def creat
-		@result = ''
-		category_names = ['Brunch Place', 'Fashion Event', 'Hotel', 'Travel Agency', 'Craft Brewery']
-		(1..5).each do |int|
-			category = Category.new(name: category_names[int-1])
-			category.save
-			(6..8).each do |sint|
-				subcategory = SubCategory.new(name: "Sub #{category_names[int-1]} #{sint}", category_id: int)
-				if subcategory.save
-					@result = 'Success!'
-				end
-			end			
-		end		
-	end
+	
 
 end

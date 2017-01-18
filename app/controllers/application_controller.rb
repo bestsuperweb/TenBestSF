@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 	def get_info company
 		info = {}
 		if company.lat.nil? or company.lng.nil? or company.photo.nil? or company.address.nil?
-			puts 'logo'	 
 			begin
 				url = "#{Rails.application.secrets[:google_place_url]}query=#{company.name}+#{company.city}&key=#{Rails.application.secrets[:google_place_key]}"
 				result = RestClient.get url
