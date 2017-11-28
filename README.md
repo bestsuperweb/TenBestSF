@@ -1,6 +1,6 @@
-# Ten Best in San fransisco
+# Ten Best in San Fransisco
 
-Ten Best in San fransisco Application was written in ruby on rails back end and bootstrap3 + jQuery front end using Google Map API, Google Place Search API, Google Photo API.
+Ten Best in San Fransisco Application was written in ruby on rails back end and bootstrap3 + jQuery front end using Google Map API, Google Place Search API, Google Photo API.
 
 
 * Ruby version 
